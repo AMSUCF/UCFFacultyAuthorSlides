@@ -1,0 +1,123 @@
+/* ============================================
+   CSS Pixel Art Character Sprite
+   ~16x24 pixel professor, scaled 4x = 64x96
+   Uses box-shadow technique on single element
+   ============================================ */
+
+#sprite {
+  position: absolute;
+  bottom: 130px;
+  left: 200px;
+  width: 4px;
+  height: 4px;
+  z-index: 10;
+  transition: left 0.6s ease-in-out;
+  image-rendering: pixelated;
+  transform: scale(1.8);
+  transform-origin: bottom center;
+}
+
+#sprite.hidden {
+  display: none;
+}
+
+#sprite.walking {
+  transition: left 0.6s linear;
+}
+
+#sprite.flip {
+  transform: scale(-1.8, 1.8);
+  transform-origin: bottom center;
+}
+
+/* The pixel art is drawn via box-shadow on a pseudo-element.
+   Each "pixel" is a 4x4 CSS box-shadow offset.
+   Grid: ~16 wide x 24 tall, origin at top-left */
+
+#sprite::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  top: 0;
+  left: 0;
+}
+
+/* === IDLE FRAME === */
+#sprite.frame-idle::before {
+  box-shadow:
+    /* Hair (brown) - row 0-2 */
+    20px 0 0 #5c3a1e, 24px 0 0 #5c3a1e, 28px 0 0 #5c3a1e, 32px 0 0 #5c3a1e, 36px 0 0 #5c3a1e,
+    16px 4px 0 #5c3a1e, 20px 4px 0 #6b4422, 24px 4px 0 #6b4422, 28px 4px 0 #6b4422, 32px 4px 0 #6b4422, 36px 4px 0 #6b4422, 40px 4px 0 #5c3a1e,
+    16px 8px 0 #5c3a1e, 20px 8px 0 #5c3a1e, 24px 8px 0 #6b4422, 28px 8px 0 #6b4422, 32px 8px 0 #6b4422, 36px 8px 0 #5c3a1e, 40px 8px 0 #5c3a1e,
+    /* Face (skin) - row 3-5 */
+    20px 12px 0 #e8b888, 24px 12px 0 #e8b888, 28px 12px 0 #e8b888, 32px 12px 0 #e8b888, 36px 12px 0 #e8b888,
+    /* Eyes + glasses row */
+    16px 16px 0 #e8b888, 20px 16px 0 #334, 24px 16px 0 #e8b888, 28px 16px 0 #556, 32px 16px 0 #e8b888, 36px 16px 0 #334, 40px 16px 0 #e8b888,
+    /* Mouth */
+    20px 20px 0 #e8b888, 24px 20px 0 #e8b888, 28px 20px 0 #c47070, 32px 20px 0 #e8b888, 36px 20px 0 #e8b888,
+    /* Neck */
+    24px 24px 0 #e8b888, 28px 24px 0 #e8b888, 32px 24px 0 #e8b888,
+    /* Shirt (teal/dark) - row 7-11 */
+    12px 28px 0 #2a5a5a, 16px 28px 0 #2a5a5a, 20px 28px 0 #2a6868, 24px 28px 0 #2a6868, 28px 28px 0 #2a6868, 32px 28px 0 #2a6868, 36px 28px 0 #2a6868, 40px 28px 0 #2a5a5a, 44px 28px 0 #2a5a5a,
+    12px 32px 0 #2a5a5a, 16px 32px 0 #2a6868, 20px 32px 0 #2a6868, 24px 32px 0 #2a7878, 28px 32px 0 #2a7878, 32px 32px 0 #2a7878, 36px 32px 0 #2a6868, 40px 32px 0 #2a6868, 44px 32px 0 #2a5a5a,
+    8px 36px 0 #e8b888, 12px 36px 0 #2a6868, 16px 36px 0 #2a6868, 20px 36px 0 #2a7878, 24px 36px 0 #2a7878, 28px 36px 0 #2a7878, 32px 36px 0 #2a7878, 36px 36px 0 #2a7878, 40px 36px 0 #2a6868, 44px 36px 0 #2a6868, 48px 36px 0 #e8b888,
+    8px 40px 0 #e8b888, 12px 40px 0 #2a6868, 16px 40px 0 #2a7878, 20px 40px 0 #2a7878, 24px 40px 0 #2a7878, 28px 40px 0 #2a7878, 32px 40px 0 #2a7878, 36px 40px 0 #2a7878, 40px 40px 0 #2a7878, 44px 40px 0 #2a6868, 48px 40px 0 #e8b888,
+    12px 44px 0 #2a5a5a, 16px 44px 0 #2a6868, 20px 44px 0 #2a6868, 24px 44px 0 #2a6868, 28px 44px 0 #2a6868, 32px 44px 0 #2a6868, 36px 44px 0 #2a6868, 40px 44px 0 #2a6868, 44px 44px 0 #2a5a5a,
+    /* Pants (dark) - row 12-15 */
+    16px 48px 0 #1a1a2e, 20px 48px 0 #222244, 24px 48px 0 #222244, 28px 48px 0 #222244, 32px 48px 0 #222244, 36px 48px 0 #222244, 40px 48px 0 #1a1a2e,
+    16px 52px 0 #1a1a2e, 20px 52px 0 #222244, 24px 52px 0 #222244, 28px 52px 0 #1a1a2e, 32px 52px 0 #222244, 36px 52px 0 #222244, 40px 52px 0 #1a1a2e,
+    16px 56px 0 #222244, 20px 56px 0 #222244, 24px 56px 0 #222244, 32px 56px 0 #222244, 36px 56px 0 #222244, 40px 56px 0 #222244,
+    /* Feet (dark) - row 16 */
+    12px 60px 0 #111, 16px 60px 0 #1a1a1a, 20px 60px 0 #1a1a1a, 24px 60px 0 #111, 32px 60px 0 #111, 36px 60px 0 #1a1a1a, 40px 60px 0 #1a1a1a, 44px 60px 0 #111;
+}
+
+/* === WALK FRAME 1 === */
+#sprite.frame-walk1::before {
+  box-shadow:
+    /* Same head */
+    20px 0 0 #5c3a1e, 24px 0 0 #5c3a1e, 28px 0 0 #5c3a1e, 32px 0 0 #5c3a1e, 36px 0 0 #5c3a1e,
+    16px 4px 0 #5c3a1e, 20px 4px 0 #6b4422, 24px 4px 0 #6b4422, 28px 4px 0 #6b4422, 32px 4px 0 #6b4422, 36px 4px 0 #6b4422, 40px 4px 0 #5c3a1e,
+    16px 8px 0 #5c3a1e, 20px 8px 0 #5c3a1e, 24px 8px 0 #6b4422, 28px 8px 0 #6b4422, 32px 8px 0 #6b4422, 36px 8px 0 #5c3a1e, 40px 8px 0 #5c3a1e,
+    20px 12px 0 #e8b888, 24px 12px 0 #e8b888, 28px 12px 0 #e8b888, 32px 12px 0 #e8b888, 36px 12px 0 #e8b888,
+    16px 16px 0 #e8b888, 20px 16px 0 #334, 24px 16px 0 #e8b888, 28px 16px 0 #556, 32px 16px 0 #e8b888, 36px 16px 0 #334, 40px 16px 0 #e8b888,
+    20px 20px 0 #e8b888, 24px 20px 0 #e8b888, 28px 20px 0 #c47070, 32px 20px 0 #e8b888, 36px 20px 0 #e8b888,
+    24px 24px 0 #e8b888, 28px 24px 0 #e8b888, 32px 24px 0 #e8b888,
+    /* Shirt */
+    12px 28px 0 #2a5a5a, 16px 28px 0 #2a5a5a, 20px 28px 0 #2a6868, 24px 28px 0 #2a6868, 28px 28px 0 #2a6868, 32px 28px 0 #2a6868, 36px 28px 0 #2a6868, 40px 28px 0 #2a5a5a, 44px 28px 0 #2a5a5a,
+    12px 32px 0 #2a5a5a, 16px 32px 0 #2a6868, 20px 32px 0 #2a6868, 24px 32px 0 #2a7878, 28px 32px 0 #2a7878, 32px 32px 0 #2a7878, 36px 32px 0 #2a6868, 40px 32px 0 #2a6868, 44px 32px 0 #2a5a5a,
+    4px 36px 0 #e8b888, 8px 36px 0 #e8b888, 12px 36px 0 #2a6868, 16px 36px 0 #2a6868, 20px 36px 0 #2a7878, 24px 36px 0 #2a7878, 28px 36px 0 #2a7878, 32px 36px 0 #2a7878, 36px 36px 0 #2a7878, 40px 36px 0 #2a6868, 44px 36px 0 #2a6868, 48px 36px 0 #e8b888, 52px 36px 0 #e8b888,
+    12px 40px 0 #2a6868, 16px 40px 0 #2a7878, 20px 40px 0 #2a7878, 24px 40px 0 #2a7878, 28px 40px 0 #2a7878, 32px 40px 0 #2a7878, 36px 40px 0 #2a7878, 40px 40px 0 #2a7878, 44px 40px 0 #2a6868,
+    12px 44px 0 #2a5a5a, 16px 44px 0 #2a6868, 20px 44px 0 #2a6868, 24px 44px 0 #2a6868, 28px 44px 0 #2a6868, 32px 44px 0 #2a6868, 36px 44px 0 #2a6868, 40px 44px 0 #2a6868, 44px 44px 0 #2a5a5a,
+    /* Legs - walking pose: left forward, right back */
+    16px 48px 0 #1a1a2e, 20px 48px 0 #222244, 24px 48px 0 #222244, 28px 48px 0 #1a1a2e, 32px 48px 0 #222244, 36px 48px 0 #222244, 40px 48px 0 #1a1a2e,
+    12px 52px 0 #222244, 16px 52px 0 #222244, 20px 52px 0 #222244, 36px 52px 0 #222244, 40px 52px 0 #222244, 44px 52px 0 #222244,
+    8px 56px 0 #222244, 12px 56px 0 #222244, 16px 56px 0 #222244, 40px 56px 0 #222244, 44px 56px 0 #222244, 48px 56px 0 #222244,
+    /* Feet - spread apart */
+    4px 60px 0 #111, 8px 60px 0 #1a1a1a, 12px 60px 0 #1a1a1a, 16px 60px 0 #111, 40px 60px 0 #111, 44px 60px 0 #1a1a1a, 48px 60px 0 #1a1a1a, 52px 60px 0 #111;
+}
+
+/* === WALK FRAME 2 === */
+#sprite.frame-walk2::before {
+  box-shadow:
+    /* Same head */
+    20px 0 0 #5c3a1e, 24px 0 0 #5c3a1e, 28px 0 0 #5c3a1e, 32px 0 0 #5c3a1e, 36px 0 0 #5c3a1e,
+    16px 4px 0 #5c3a1e, 20px 4px 0 #6b4422, 24px 4px 0 #6b4422, 28px 4px 0 #6b4422, 32px 4px 0 #6b4422, 36px 4px 0 #6b4422, 40px 4px 0 #5c3a1e,
+    16px 8px 0 #5c3a1e, 20px 8px 0 #5c3a1e, 24px 8px 0 #6b4422, 28px 8px 0 #6b4422, 32px 8px 0 #6b4422, 36px 8px 0 #5c3a1e, 40px 8px 0 #5c3a1e,
+    20px 12px 0 #e8b888, 24px 12px 0 #e8b888, 28px 12px 0 #e8b888, 32px 12px 0 #e8b888, 36px 12px 0 #e8b888,
+    16px 16px 0 #e8b888, 20px 16px 0 #334, 24px 16px 0 #e8b888, 28px 16px 0 #556, 32px 16px 0 #e8b888, 36px 16px 0 #334, 40px 16px 0 #e8b888,
+    20px 20px 0 #e8b888, 24px 20px 0 #e8b888, 28px 20px 0 #c47070, 32px 20px 0 #e8b888, 36px 20px 0 #e8b888,
+    24px 24px 0 #e8b888, 28px 24px 0 #e8b888, 32px 24px 0 #e8b888,
+    /* Shirt */
+    12px 28px 0 #2a5a5a, 16px 28px 0 #2a5a5a, 20px 28px 0 #2a6868, 24px 28px 0 #2a6868, 28px 28px 0 #2a6868, 32px 28px 0 #2a6868, 36px 28px 0 #2a6868, 40px 28px 0 #2a5a5a, 44px 28px 0 #2a5a5a,
+    12px 32px 0 #2a5a5a, 16px 32px 0 #2a6868, 20px 32px 0 #2a6868, 24px 32px 0 #2a7878, 28px 32px 0 #2a7878, 32px 32px 0 #2a7878, 36px 32px 0 #2a6868, 40px 32px 0 #2a6868, 44px 32px 0 #2a5a5a,
+    48px 36px 0 #e8b888, 52px 36px 0 #e8b888, 12px 36px 0 #2a6868, 16px 36px 0 #2a6868, 20px 36px 0 #2a7878, 24px 36px 0 #2a7878, 28px 36px 0 #2a7878, 32px 36px 0 #2a7878, 36px 36px 0 #2a7878, 40px 36px 0 #2a6868, 44px 36px 0 #2a6868, 4px 36px 0 #e8b888, 8px 36px 0 #e8b888,
+    12px 40px 0 #2a6868, 16px 40px 0 #2a7878, 20px 40px 0 #2a7878, 24px 40px 0 #2a7878, 28px 40px 0 #2a7878, 32px 40px 0 #2a7878, 36px 40px 0 #2a7878, 40px 40px 0 #2a7878, 44px 40px 0 #2a6868,
+    12px 44px 0 #2a5a5a, 16px 44px 0 #2a6868, 20px 44px 0 #2a6868, 24px 44px 0 #2a6868, 28px 44px 0 #2a6868, 32px 44px 0 #2a6868, 36px 44px 0 #2a6868, 40px 44px 0 #2a6868, 44px 44px 0 #2a5a5a,
+    /* Legs - opposite pose: right forward, left back */
+    16px 48px 0 #1a1a2e, 20px 48px 0 #222244, 24px 48px 0 #222244, 28px 48px 0 #1a1a2e, 32px 48px 0 #222244, 36px 48px 0 #222244, 40px 48px 0 #1a1a2e,
+    36px 52px 0 #222244, 40px 52px 0 #222244, 44px 52px 0 #222244, 12px 52px 0 #222244, 16px 52px 0 #222244, 20px 52px 0 #222244,
+    40px 56px 0 #222244, 44px 56px 0 #222244, 48px 56px 0 #222244, 8px 56px 0 #222244, 12px 56px 0 #222244, 16px 56px 0 #222244,
+    /* Feet - spread */
+    40px 60px 0 #111, 44px 60px 0 #1a1a1a, 48px 60px 0 #1a1a1a, 52px 60px 0 #111, 4px 60px 0 #111, 8px 60px 0 #1a1a1a, 12px 60px 0 #1a1a1a, 16px 60px 0 #111;
+}

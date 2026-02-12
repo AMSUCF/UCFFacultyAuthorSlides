@@ -1,0 +1,197 @@
+/* ============================================
+   Transition Animations
+   Iris, diamond, wipe, fade, walk transitions
+   ============================================ */
+
+/* --- Iris Wipe (viewport-based) --- */
+#viewport.iris-closing {
+  animation: viewport-iris-close 820ms ease-in forwards;
+}
+
+#viewport.iris-opening {
+  animation: viewport-iris-open 820ms ease-out forwards;
+}
+
+@keyframes viewport-iris-close {
+  from { clip-path: circle(75% at var(--iris-x, 50%) var(--iris-y, 70%)); }
+  to   { clip-path: circle(0% at var(--iris-x, 50%) var(--iris-y, 70%)); }
+}
+
+@keyframes viewport-iris-open {
+  from { clip-path: circle(0% at var(--iris-x, 50%) var(--iris-y, 70%)); }
+  to   { clip-path: circle(75% at var(--iris-x, 50%) var(--iris-y, 70%)); }
+}
+
+/* --- Diamond Wipe (viewport-based) --- */
+#viewport.diamond-closing {
+  animation: viewport-diamond-close 820ms ease-in forwards;
+}
+
+#viewport.diamond-opening {
+  animation: viewport-diamond-open 820ms ease-out forwards;
+}
+
+@keyframes viewport-diamond-close {
+  from { clip-path: polygon(50% -50%, 150% 50%, 50% 150%, -50% 50%); }
+  to   { clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%); }
+}
+
+@keyframes viewport-diamond-open {
+  from { clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%); }
+  to   { clip-path: polygon(50% -50%, 150% 50%, 50% 150%, -50% 50%); }
+}
+
+/* --- Wipe Right (overlay-based) --- */
+.wipe-right-close {
+  background: #000;
+  animation: wipe-right-close 400ms ease-in forwards;
+}
+
+.wipe-right-open {
+  background: #000;
+  animation: wipe-right-open 400ms ease-out forwards;
+}
+
+@keyframes wipe-right-close {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes wipe-right-open {
+  from { clip-path: inset(0 0 0 0); }
+  to   { clip-path: inset(0 0 0 100%); }
+}
+
+/* --- Wipe Left (overlay-based) --- */
+.wipe-left-close {
+  background: #000;
+  animation: wipe-left-close 400ms ease-in forwards;
+}
+
+.wipe-left-open {
+  background: #000;
+  animation: wipe-left-open 400ms ease-out forwards;
+}
+
+@keyframes wipe-left-close {
+  from { clip-path: inset(0 0 0 100%); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes wipe-left-open {
+  from { clip-path: inset(0 0 0 0); }
+  to   { clip-path: inset(0 100% 0 0); }
+}
+
+/* --- Wipe Down (overlay-based) --- */
+.wipe-down-close {
+  background: #000;
+  animation: wipe-down-close 400ms ease-in forwards;
+}
+
+.wipe-down-open {
+  background: #000;
+  animation: wipe-down-open 400ms ease-out forwards;
+}
+
+@keyframes wipe-down-close {
+  from { clip-path: inset(0 0 100% 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes wipe-down-open {
+  from { clip-path: inset(0 0 0 0); }
+  to   { clip-path: inset(100% 0 0 0); }
+}
+
+/* --- Fade --- */
+.fade-out {
+  background: #000;
+  opacity: 0;
+  animation: fade-to-black 600ms ease-in forwards;
+}
+
+.fade-in {
+  background: #000;
+  opacity: 1;
+  animation: fade-from-black 600ms ease-out forwards;
+}
+
+/* Slow fade for dramatic scenes */
+.fade-slow-out {
+  background: #000;
+  opacity: 0;
+  animation: fade-to-black 1200ms ease-in forwards;
+}
+
+.fade-slow-in {
+  background: #000;
+  opacity: 1;
+  animation: fade-from-black 1200ms ease-out forwards;
+}
+
+@keyframes fade-to-black {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fade-from-black {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* Quick fade (fallback) */
+.fade-quick-out {
+  background: #000;
+  opacity: 0;
+  animation: fade-to-black 300ms ease-in forwards;
+}
+
+.fade-quick-in {
+  background: #000;
+  opacity: 1;
+  animation: fade-from-black 300ms ease-out forwards;
+}
+
+/* --- Walk character animations --- */
+@keyframes walk-exit-right {
+  from { left: var(--sprite-start, 200px); }
+  to   { left: 1300px; }
+}
+
+@keyframes walk-enter-left {
+  from { left: -80px; }
+  to   { left: var(--sprite-end, 200px); }
+}
+
+@keyframes walk-exit-left {
+  from { left: var(--sprite-start, 200px); }
+  to   { left: -80px; }
+}
+
+@keyframes walk-enter-right {
+  from { left: 1300px; }
+  to   { left: var(--sprite-end, 200px); }
+}
+
+/* --- Object entrance animations --- */
+@keyframes object-appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Room fade helper --- */
+.room-entering {
+  animation: room-fade-in 400ms ease-out forwards;
+}
+
+@keyframes room-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

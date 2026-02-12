@@ -1,0 +1,884 @@
+/* ============================================
+   Room Templates - 14 Maniac Mansion-style environments
+   Bright, colorful, clearly distinct rooms
+   ============================================ */
+
+.room-bg {
+  position: absolute;
+  inset: 0;
+}
+
+/* ================================================
+   1. TITLE SCREEN - Stars + darkness
+   ================================================ */
+.room-title {
+  --bg: #0a0a14;
+}
+
+.room-title .room-bg {
+  background: linear-gradient(to bottom, #0a0a14 0%, #0a0a14 40%, #0e1025 75%, #141432 100%);
+}
+
+/* --- Cityscape silhouette --- */
+.cityscape {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    /* Ground strip */
+    linear-gradient(#060610, #060610) no-repeat 0 530px / 100% 10px,
+
+    /* Near layer - darkest, shortest foreground */
+    linear-gradient(#080812, #080812) no-repeat 0px 420px / 65px 120px,
+    linear-gradient(#080812, #080812) no-repeat 130px 395px / 55px 145px,
+    linear-gradient(#080812, #080812) no-repeat 250px 385px / 50px 155px,
+    linear-gradient(#080812, #080812) no-repeat 400px 405px / 60px 135px,
+    linear-gradient(#080812, #080812) no-repeat 490px 395px / 45px 145px,
+    linear-gradient(#080812, #080812) no-repeat 600px 415px / 55px 125px,
+    linear-gradient(#080812, #080812) no-repeat 720px 400px / 50px 140px,
+    linear-gradient(#080812, #080812) no-repeat 830px 392px / 60px 148px,
+    linear-gradient(#080812, #080812) no-repeat 1000px 402px / 55px 138px,
+    linear-gradient(#080812, #080812) no-repeat 1120px 415px / 60px 125px,
+    linear-gradient(#080812, #080812) no-repeat 1210px 435px / 70px 105px,
+
+    /* Mid layer */
+    linear-gradient(#0c0c18, #0c0c18) no-repeat 60px 350px / 75px 190px,
+    linear-gradient(#0c0c18, #0c0c18) no-repeat 180px 315px / 65px 225px,
+    linear-gradient(#0c0c18, #0c0c18) no-repeat 335px 305px / 70px 235px,
+    linear-gradient(#0c0c18, #0c0c18) no-repeat 520px 325px / 60px 215px,
+    linear-gradient(#0c0c18, #0c0c18) no-repeat 640px 340px / 80px 200px,
+    linear-gradient(#0c0c18, #0c0c18) no-repeat 770px 315px / 60px 225px,
+    linear-gradient(#0c0c18, #0c0c18) no-repeat 930px 330px / 80px 210px,
+    linear-gradient(#0c0c18, #0c0c18) no-repeat 1060px 345px / 65px 195px,
+
+    /* Far layer - lightest, tallest skyline */
+    linear-gradient(#10101e, #10101e) no-repeat 280px 230px / 55px 310px,
+    linear-gradient(#10101e, #10101e) no-repeat 440px 250px / 80px 290px,
+    linear-gradient(#10101e, #10101e) no-repeat 580px 210px / 50px 330px,
+    linear-gradient(#10101e, #10101e) no-repeat 700px 260px / 70px 280px,
+    linear-gradient(#10101e, #10101e) no-repeat 860px 240px / 60px 300px,
+
+    /* Antenna spires */
+    linear-gradient(#10101e, #10101e) no-repeat 603px 198px / 2px 12px,
+    linear-gradient(#10101e, #10101e) no-repeat 888px 230px / 2px 10px;
+}
+
+/* Steady windows - always lit */
+.cityscape::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  box-shadow:
+    /* Far building 1 (x:280) */
+    290px 252px 0 0 #ffcc00,
+    318px 252px 0 0 #cc9900,
+    304px 292px 0 0 #ffcc00,
+    290px 372px 0 0 #cc9900,
+    318px 452px 0 0 #ffcc00,
+    /* Far building 2 (x:440) */
+    452px 272px 0 0 #ffcc00,
+    500px 272px 0 0 #cc9900,
+    476px 312px 0 0 #ffcc00,
+    500px 392px 0 0 #cc9900,
+    452px 452px 0 0 #ffcc00,
+    /* Far building 3 (x:580) */
+    590px 234px 0 0 #ffcc00,
+    614px 274px 0 0 #cc9900,
+    590px 354px 0 0 #ffcc00,
+    614px 434px 0 0 #ffcc00,
+    /* Far building 4 (x:700) */
+    712px 282px 0 0 #ffcc00,
+    748px 282px 0 0 #cc9900,
+    730px 362px 0 0 #ffcc00,
+    712px 442px 0 0 #cc9900,
+    /* Far building 5 (x:860) */
+    872px 262px 0 0 #ffcc00,
+    900px 302px 0 0 #cc9900,
+    872px 382px 0 0 #ffcc00,
+    900px 462px 0 0 #ffcc00,
+    /* Mid buildings */
+    192px 338px 0 0 #cc9900,
+    224px 378px 0 0 #cc9900,
+    347px 328px 0 0 #cc9900,
+    383px 368px 0 0 #cc9900,
+    652px 364px 0 0 #cc9900,
+    700px 404px 0 0 #cc9900,
+    942px 352px 0 0 #cc9900,
+    990px 392px 0 0 #cc9900;
+}
+
+/* Flickering windows - old game CRT feel */
+.cityscape::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  animation: window-flicker 6s steps(1) infinite;
+  box-shadow:
+    304px 252px 0 0 #ffdd44,
+    318px 332px 0 0 #ffcc00,
+    290px 452px 0 0 #ffdd44,
+    476px 272px 0 0 #ffdd44,
+    452px 352px 0 0 #ffcc00,
+    500px 452px 0 0 #ffdd44,
+    614px 234px 0 0 #ffdd44,
+    590px 314px 0 0 #ffcc00,
+    614px 394px 0 0 #ffdd44,
+    748px 322px 0 0 #ffdd44,
+    712px 402px 0 0 #ffcc00,
+    900px 262px 0 0 #ffdd44,
+    872px 342px 0 0 #ffcc00,
+    900px 422px 0 0 #ffdd44,
+    532px 348px 0 0 #ffdd44,
+    782px 338px 0 0 #ffdd44,
+    1072px 368px 0 0 #ffdd44;
+}
+
+@keyframes window-flicker {
+  0%   { opacity: 0.9; }
+  8%   { opacity: 0; }
+  14%  { opacity: 0.9; }
+  38%  { opacity: 0; }
+  44%  { opacity: 0.9; }
+  60%  { opacity: 0; }
+  66%  { opacity: 0.9; }
+  83%  { opacity: 0; }
+  90%  { opacity: 0.9; }
+}
+
+.star-field {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  box-shadow:
+    120px 40px 0 0 #aaa, 250px 80px 0 0 #ccc, 400px 30px 0 0 #999,
+    550px 110px 0 0 #bbb, 700px 50px 0 0 #aaa, 850px 90px 0 0 #ddd,
+    1000px 35px 0 0 #999, 1100px 100px 0 0 #bbb, 1200px 60px 0 0 #aaa,
+    80px 150px 0 0 #888, 300px 180px 0 0 #aaa, 500px 200px 0 0 #999,
+    650px 160px 0 0 #ccc, 900px 190px 0 0 #aaa, 1050px 170px 0 0 #bbb,
+    150px 250px 0 0 #999, 450px 280px 0 0 #aaa, 750px 240px 0 0 #ddd,
+    950px 270px 0 0 #999, 1150px 230px 0 0 #aaa, 50px 320px 0 0 #bbb,
+    350px 350px 0 0 #999, 600px 310px 0 0 #aaa, 800px 340px 0 0 #ccc,
+    1080px 330px 0 0 #999, 200px 400px 0 0 #aaa, 480px 380px 0 0 #888,
+    720px 410px 0 0 #bbb, 1000px 390px 0 0 #aaa, 30px 70px 0 0 #bbb,
+    180px 120px 0 0 #999, 620px 85px 0 0 #ccc, 1180px 150px 0 0 #aaa,
+    350px 35px 0 0 #999, 820px 15px 0 0 #aaa, 1050px 65px 0 0 #888,
+    50px 220px 0 0 #aaa, 280px 260px 0 0 #ddd, 1220px 290px 0 0 #999;
+  pointer-events: none;
+  animation: star-twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes star-twinkle {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* ================================================
+   2. EXTERIOR - UCF building at dusk/night
+   Bright enough to see -- classic approach shot
+   ================================================ */
+.room-exterior .room-bg {
+  background:
+    /* Moon */
+    radial-gradient(circle 16px at 90% 8%, rgba(255,255,230,0.95), rgba(255,255,230,0.3) 50%, transparent 100%),
+    radial-gradient(circle 60px at 90% 8%, rgba(200,200,240,0.15), transparent),
+
+    /* Palm tree left - fronds */
+    linear-gradient(150deg, #2a7a35 0%, #2a7a35 45%, transparent 45%) no-repeat 40px 48px / 90px 55px,
+    linear-gradient(180deg, #1e6828 0%, #1e6828 50%, transparent 50%) no-repeat 25px 38px / 70px 65px,
+    linear-gradient(120deg, #2e8838 0%, #2e8838 40%, transparent 40%) no-repeat 80px 42px / 80px 50px,
+    linear-gradient(200deg, #1c6426 0%, #1c6426 40%, transparent 40%) no-repeat 10px 55px / 60px 50px,
+    /* Palm tree left - trunk */
+    linear-gradient(to right, #6a5030, #7a6040 50%, #6a5030) no-repeat 73px 95px / 12px 230px,
+
+    /* Palm tree right - fronds */
+    linear-gradient(210deg, #2a7a35 0%, #2a7a35 45%, transparent 45%) no-repeat 1100px 38px / 90px 55px,
+    linear-gradient(180deg, #1e6828 0%, #1e6828 50%, transparent 50%) no-repeat 1120px 30px / 70px 65px,
+    linear-gradient(240deg, #2e8838 0%, #2e8838 40%, transparent 40%) no-repeat 1070px 42px / 80px 50px,
+    linear-gradient(160deg, #1c6426 0%, #1c6426 40%, transparent 40%) no-repeat 1150px 48px / 60px 50px,
+    /* Palm tree right - trunk */
+    linear-gradient(to right, #6a5030, #7a6040 50%, #6a5030) no-repeat 1128px 82px / 12px 242px,
+
+    /* Building - lit windows row 1 */
+    radial-gradient(ellipse 55px 40px at 375px 165px, rgba(255,200,80,0.25), transparent),
+    radial-gradient(ellipse 55px 40px at 555px 165px, rgba(255,200,80,0.25), transparent),
+    radial-gradient(ellipse 55px 40px at 735px 165px, rgba(255,200,80,0.25), transparent),
+    radial-gradient(ellipse 55px 40px at 905px 165px, rgba(255,200,80,0.25), transparent),
+    linear-gradient(#eebb44, #ddaa30) no-repeat 350px 148px / 48px 32px,
+    linear-gradient(#eebb44, #ddaa30) no-repeat 530px 148px / 48px 32px,
+    linear-gradient(#eebb44, #ddaa30) no-repeat 710px 148px / 48px 32px,
+    linear-gradient(#eebb44, #ddaa30) no-repeat 880px 148px / 48px 32px,
+
+    /* Building - lit windows row 2 */
+    linear-gradient(#dda830, #cc9920) no-repeat 350px 220px / 48px 32px,
+    linear-gradient(#dda830, #cc9920) no-repeat 530px 220px / 48px 32px,
+    linear-gradient(#cc9920, #bb8810) no-repeat 710px 220px / 48px 32px,
+    linear-gradient(#dda830, #cc9920) no-repeat 880px 220px / 48px 32px,
+
+    /* Window dividers (cross in each window) */
+    linear-gradient(#8a7a50, #8a7a50) no-repeat 372px 162px / 2px 20px,
+    linear-gradient(#8a7a50, #8a7a50) no-repeat 356px 155px / 36px 2px,
+    linear-gradient(#8a7a50, #8a7a50) no-repeat 552px 162px / 2px 20px,
+    linear-gradient(#8a7a50, #8a7a50) no-repeat 536px 155px / 36px 2px,
+    linear-gradient(#8a7a50, #8a7a50) no-repeat 732px 162px / 2px 20px,
+    linear-gradient(#8a7a50, #8a7a50) no-repeat 716px 155px / 36px 2px,
+    linear-gradient(#8a7a50, #8a7a50) no-repeat 902px 162px / 2px 20px,
+    linear-gradient(#8a7a50, #8a7a50) no-repeat 886px 155px / 36px 2px,
+
+    /* Building - entrance glow */
+    radial-gradient(ellipse 50px 70px at 616px 290px, rgba(255,210,120,0.3), transparent),
+    /* Building - entrance door */
+    linear-gradient(#4a2a10, #3a1a08) no-repeat 588px 256px / 56px 74px,
+    /* Entrance frame + arch */
+    linear-gradient(#b09870, #b09870) no-repeat 582px 248px / 68px 6px,
+    linear-gradient(#b09870, #b09870) no-repeat 582px 248px / 6px 82px,
+    linear-gradient(#b09870, #b09870) no-repeat 644px 248px / 6px 82px,
+
+    /* Building - columns */
+    linear-gradient(to right, #a08a68, #b09a78 50%, #a08a68) no-repeat 300px 130px / 16px 198px,
+    linear-gradient(to right, #a08a68, #b09a78 50%, #a08a68) no-repeat 470px 130px / 16px 198px,
+    linear-gradient(to right, #a08a68, #b09a78 50%, #a08a68) no-repeat 780px 130px / 16px 198px,
+    linear-gradient(to right, #a08a68, #b09a78 50%, #a08a68) no-repeat 940px 130px / 16px 198px,
+
+    /* Building - roof cornice */
+    linear-gradient(#7a6a50, #8a7a60) no-repeat 270px 118px / 700px 14px,
+    /* Building - pediment */
+    linear-gradient(#8a7a60, #7a6a50) no-repeat 500px 100px / 240px 20px,
+    linear-gradient(#907a60, #8a7a58) no-repeat 540px 94px / 160px 10px,
+
+    /* Building - main facade */
+    linear-gradient(to bottom, #8a7060, #7a6050) no-repeat 280px 130px / 680px 200px,
+    /* Brick texture overlay */
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px, transparent 14px,
+      rgba(0,0,0,0.08) 14px, rgba(0,0,0,0.08) 16px
+    ) no-repeat 280px 130px / 680px 200px,
+
+    /* Steps */
+    linear-gradient(#8a8070, #7a7060) no-repeat 520px 328px / 200px 8px,
+    linear-gradient(#807868, #706858) no-repeat 540px 336px / 160px 6px,
+
+    /* Walkway */
+    linear-gradient(#5a5e58, #4a4e48) no-repeat 460px 342px / 320px 200px,
+
+    /* Ground - grass */
+    linear-gradient(to bottom, #2a5a2a, #1a4a1a) no-repeat 0 320px / 100% 220px,
+
+    /* Sky */
+    linear-gradient(to bottom, #0a0a2a 0%, #14143a 30%, #1e1e48 55%, #282850 72%, #2a3a2a 88%);
+}
+
+/* ================================================
+   3. LECTURE HALL - Bright auditorium feel
+   Warm wood tones, visible seats, bright screen
+   ================================================ */
+.room-lecture-hall .room-bg {
+  background:
+    /* Projector beam (visible) */
+    linear-gradient(175deg, rgba(220,220,240,0.08) 0%, transparent 60%) no-repeat 500px 0 / 300px 200px,
+
+    /* Projection screen */
+    linear-gradient(#d8d4cc, #ccc8c0) no-repeat 340px 30px / 560px 8px,
+    linear-gradient(#f0ece4, #e8e4dc) no-repeat 350px 38px / 540px 300px,
+    /* Screen shadow */
+    linear-gradient(rgba(0,0,0,0.2), transparent) no-repeat 350px 338px / 540px 20px,
+
+    /* Podium */
+    linear-gradient(to right, #7a6a5a, #8a7a6a 50%, #7a6a5a) no-repeat 570px 380px / 100px 60px,
+    linear-gradient(#8a7a6a, #8a7a6a) no-repeat 560px 374px / 120px 8px,
+
+    /* Seat rows - warm red upholstery, visible wood backs */
+    linear-gradient(#8a6a58, #8a6a58) no-repeat 100px 430px / 1080px 6px,
+    linear-gradient(#6a3030, #5a2828) no-repeat 100px 436px / 1080px 18px,
+    linear-gradient(#8a6a58, #8a6a58) no-repeat 60px 466px / 1160px 6px,
+    linear-gradient(#6a3030, #5a2828) no-repeat 60px 472px / 1160px 18px,
+    linear-gradient(#8a6a58, #8a6a58) no-repeat 20px 502px / 1240px 6px,
+    linear-gradient(#6a3030, #5a2828) no-repeat 20px 508px / 1240px 22px,
+
+    /* Seat armrests */
+    repeating-linear-gradient(to right, transparent 0px, transparent 56px, #9a8a70 56px, #9a8a70 60px) no-repeat 100px 430px / 1080px 24px,
+    repeating-linear-gradient(to right, transparent 0px, transparent 56px, #9a8a70 56px, #9a8a70 60px) no-repeat 60px 466px / 1160px 24px,
+    repeating-linear-gradient(to right, transparent 0px, transparent 56px, #9a8a70 56px, #9a8a70 60px) no-repeat 20px 502px / 1240px 28px,
+
+    /* Ceiling light */
+    radial-gradient(ellipse 400px 80px at 50% 0%, rgba(220,210,180,0.15), transparent),
+
+    /* Stage floor */
+    linear-gradient(#5a4e3e, #5a4e3e) no-repeat 0 408px / 100% 4px,
+
+    /* Walls - warm tan/beige, clearly visible */
+    linear-gradient(to bottom, #8a7e6e 0%, #7a6e5e 60%, #5a4e3e 62%, #4a3e2e);
+}
+
+/* ================================================
+   4. SERVER ROOM - Blue-lit tech cave
+   Dark but DISTINCTLY blue, not purple
+   ================================================ */
+.room-server-room .room-bg {
+  background:
+    /* Overhead blue glow */
+    radial-gradient(ellipse 500px 150px at 50% 0%, rgba(60,140,220,0.15), transparent),
+
+    /* Server rack 1 (left) */
+    linear-gradient(#4a4a5a, #3e3e50) no-repeat 40px 20px / 100px 360px,
+    repeating-linear-gradient(to bottom, #555568 0px, #555568 16px, #48485c 16px, #48485c 20px) no-repeat 48px 28px / 84px 344px,
+    /* LEDs rack 1 */
+    radial-gradient(circle 3px at 52px 44px, #0f0, transparent),
+    radial-gradient(circle 3px at 52px 64px, #0f0, transparent),
+    radial-gradient(circle 3px at 52px 84px, #0f0, transparent),
+    radial-gradient(circle 3px at 52px 104px, #ff4, transparent),
+    radial-gradient(circle 3px at 52px 124px, #0f0, transparent),
+
+    /* Server rack 2 */
+    linear-gradient(#4a4a5a, #3e3e50) no-repeat 160px 20px / 100px 360px,
+    repeating-linear-gradient(to bottom, #555568 0px, #555568 16px, #48485c 16px, #48485c 20px) no-repeat 168px 28px / 84px 344px,
+    /* LEDs rack 2 */
+    radial-gradient(circle 3px at 172px 44px, #0f0, transparent),
+    radial-gradient(circle 3px at 172px 64px, #f44, transparent),
+    radial-gradient(circle 3px at 172px 84px, #0f0, transparent),
+    radial-gradient(circle 3px at 172px 104px, #0f0, transparent),
+
+    /* Server rack 3 (right) */
+    linear-gradient(#4a4a5a, #3e3e50) no-repeat 1020px 20px / 100px 360px,
+    repeating-linear-gradient(to bottom, #555568 0px, #555568 16px, #48485c 16px, #48485c 20px) no-repeat 1028px 28px / 84px 344px,
+
+    /* Server rack 4 (far right) */
+    linear-gradient(#4a4a5a, #3e3e50) no-repeat 1140px 20px / 100px 360px,
+    repeating-linear-gradient(to bottom, #555568 0px, #555568 16px, #48485c 16px, #48485c 20px) no-repeat 1148px 28px / 84px 344px,
+
+    /* Cable trays (horizontal) */
+    linear-gradient(#555, #555) no-repeat 0 14px / 100% 3px,
+    linear-gradient(#4a4a50, #4a4a50) no-repeat 0 384px / 100% 3px,
+
+    /* Floor tiles */
+    repeating-linear-gradient(to right, #1e2430 0px, #1e2430 60px, #242a38 60px, #242a38 64px),
+
+    /* Room - distinctly BLUE walls */
+    linear-gradient(to bottom, #2e3a50 0%, #283448 60%, #1e2430 65%);
+}
+
+/* ================================================
+   5. ARCHIVE - Warm amber library with filing cabinets
+   Rich brown/amber tones, clearly lit
+   ================================================ */
+.room-archive .room-bg {
+  background:
+    /* Warm lamp glow */
+    radial-gradient(ellipse 280px 340px at 80% 30%, rgba(255,190,90,0.2), transparent),
+
+    /* Filing cabinet 1 */
+    linear-gradient(#8a7a60, #7a6a50) no-repeat 40px 60px / 80px 300px,
+    linear-gradient(#9a8a70, #8a7a60) no-repeat 44px 68px / 72px 60px,
+    linear-gradient(#9a8a70, #8a7a60) no-repeat 44px 138px / 72px 60px,
+    linear-gradient(#9a8a70, #8a7a60) no-repeat 44px 208px / 72px 60px,
+    linear-gradient(#9a8a70, #8a7a60) no-repeat 44px 278px / 72px 60px,
+    /* Drawer handles */
+    linear-gradient(#ccb888, #ccb888) no-repeat 68px 92px / 20px 4px,
+    linear-gradient(#ccb888, #ccb888) no-repeat 68px 162px / 20px 4px,
+    linear-gradient(#ccb888, #ccb888) no-repeat 68px 232px / 20px 4px,
+    linear-gradient(#ccb888, #ccb888) no-repeat 68px 302px / 20px 4px,
+
+    /* Filing cabinet 2 */
+    linear-gradient(#8a7a60, #7a6a50) no-repeat 140px 80px / 80px 280px,
+    linear-gradient(#9a8a70, #8a7a60) no-repeat 144px 88px / 72px 56px,
+    linear-gradient(#9a8a70, #8a7a60) no-repeat 144px 154px / 72px 56px,
+    linear-gradient(#9a8a70, #8a7a60) no-repeat 144px 220px / 72px 56px,
+    linear-gradient(#9a8a70, #8a7a60) no-repeat 144px 286px / 72px 56px,
+
+    /* Reading table */
+    linear-gradient(#8a7a58, #7a6a48) no-repeat 300px 340px / 660px 12px,
+    linear-gradient(#7a6a48, #6a5a38) no-repeat 300px 352px / 660px 40px,
+
+    /* Desk lamp on table */
+    radial-gradient(circle 40px at 920px 330px, rgba(255,210,120,0.4), transparent),
+    linear-gradient(#aa8840, #aa8840) no-repeat 916px 310px / 8px 30px,
+
+    /* Dusty shelf on right wall */
+    linear-gradient(#7a6a50, #6a5a40) no-repeat 1020px 80px / 220px 8px,
+    linear-gradient(#7a6a50, #6a5a40) no-repeat 1020px 180px / 220px 8px,
+    linear-gradient(#7a6a50, #6a5a40) no-repeat 1020px 280px / 220px 8px,
+
+    /* Baseboard */
+    linear-gradient(#6a5a40, #6a5a40) no-repeat 0 365px / 100% 4px,
+
+    /* Room - warm amber/brown, VISIBLE */
+    linear-gradient(to bottom, #6a5840 0%, #5a4830 55%, #4a3820 60%, #3a2a18);
+}
+
+/* ================================================
+   6. HALLWAY - Perspective corridor with doors
+   Warm tan walls, clearly visible carpet and doors
+   ================================================ */
+.room-hallway .room-bg {
+  background:
+    /* Ceiling light at end */
+    radial-gradient(circle 40px at 50% 8%, rgba(255,230,160,0.3), transparent),
+
+    /* Left wall perspective shading */
+    linear-gradient(to right, #8a7e6e, transparent 80%) no-repeat 0 0 / 35% 62%,
+    /* Right wall perspective shading */
+    linear-gradient(to left, #8a7e6e, transparent 80%) no-repeat 65% 0 / 35% 62%,
+
+    /* Left door 1 */
+    linear-gradient(#5a4830, #4a3820) no-repeat 10% 15% / 10% 45%,
+    linear-gradient(#8a7a58, #8a7a58) no-repeat 9.5% 14% / 11% 2%,
+    /* Left door 2 */
+    linear-gradient(#5a4830, #4a3820) no-repeat 22% 18% / 8% 40%,
+
+    /* Right door 1 */
+    linear-gradient(#5a4830, #4a3820) no-repeat 80% 15% / 10% 45%,
+    linear-gradient(#8a7a58, #8a7a58) no-repeat 79.5% 14% / 11% 2%,
+    /* Right door 2 */
+    linear-gradient(#5a4830, #4a3820) no-repeat 70% 18% / 8% 40%,
+
+    /* Far doorway (lit from beyond) */
+    radial-gradient(ellipse 60px 80px at 50% 35%, rgba(255,210,120,0.15), transparent),
+    linear-gradient(#4a3828, #2a1e10) no-repeat 43% 12% / 14% 50%,
+    /* Far door frame */
+    linear-gradient(#8a7a58, #8a7a58) no-repeat 42% 11% / 1% 51%,
+    linear-gradient(#8a7a58, #8a7a58) no-repeat 57% 11% / 1% 51%,
+    linear-gradient(#8a7a58, #8a7a58) no-repeat 42% 10% / 16% 2%,
+
+    /* Wall sconces */
+    radial-gradient(circle 25px at 30% 25%, rgba(255,210,120,0.15), transparent),
+    radial-gradient(circle 25px at 70% 25%, rgba(255,210,120,0.15), transparent),
+
+    /* Runner carpet - rich red */
+    linear-gradient(#8a2828 0px, #8a2828 4px, #6a1818 4px, #6a1818 8px) no-repeat 35% 62% / 30% 38%,
+    /* Carpet border - gold */
+    linear-gradient(#bb8830, #bb8830) no-repeat 34% 62% / 1% 38%,
+    linear-gradient(#bb8830, #bb8830) no-repeat 65% 62% / 1% 38%,
+
+    /* Baseboard */
+    linear-gradient(#7a6e50, #7a6e50) no-repeat 0 60% / 100% 4px,
+
+    /* Wall + floor - warm tan walls */
+    linear-gradient(to bottom, #7a6e5c, #6a5e4c 62%, #3a3020 64%);
+}
+
+/* ================================================
+   7. STUDY - Professor's office: desk, books, lamp
+   Warm rich browns, clearly visible bookshelf + desk
+   ================================================ */
+.room-study {
+  --wall: #6a4e38;
+  --wall-light: #7a5e48;
+  --floor: #4a3828;
+  --trim: #8a6a48;
+}
+
+.room-study .room-bg {
+  background:
+    /* Desk lamp glow */
+    radial-gradient(ellipse 220px 280px at 82% 45%, rgba(255,200,100,0.2), transparent),
+
+    /* Window (right wall) */
+    linear-gradient(#2a3060, #1a2050) no-repeat 1040px 40px / 120px 180px,
+    /* Window frame */
+    linear-gradient(#8a7a58, #8a7a58) no-repeat 1034px 34px / 132px 6px,
+    linear-gradient(#8a7a58, #8a7a58) no-repeat 1034px 34px / 6px 192px,
+    linear-gradient(#8a7a58, #8a7a58) no-repeat 1160px 34px / 6px 192px,
+    linear-gradient(#8a7a58, #8a7a58) no-repeat 1034px 220px / 132px 6px,
+    /* Window cross */
+    linear-gradient(#8a7a58, #8a7a58) no-repeat 1097px 40px / 4px 180px,
+    linear-gradient(#8a7a58, #8a7a58) no-repeat 1040px 126px / 120px 4px,
+    /* Moonlight through window */
+    radial-gradient(ellipse 120px 140px at 1100px 130px, rgba(160,180,220,0.12), transparent),
+
+    /* Bookshelf (left wall) - shelf boards */
+    linear-gradient(var(--trim), #6a4a30) no-repeat 30px 50px / 210px 8px,
+    linear-gradient(var(--trim), #6a4a30) no-repeat 30px 140px / 210px 8px,
+    linear-gradient(var(--trim), #6a4a30) no-repeat 30px 230px / 210px 8px,
+    linear-gradient(var(--trim), #6a4a30) no-repeat 30px 320px / 210px 8px,
+    /* Book spines row 1 - bright colorful spines */
+    repeating-linear-gradient(to right,
+      #a85520 0px, #a85520 10px, #804830 10px, #804830 18px,
+      #c06830 18px, #c06830 26px, #4070a0 26px, #4070a0 36px,
+      #784028 36px, #784028 44px, #aa8828 44px, #aa8828 52px
+    ) no-repeat 36px 58px / 198px 80px,
+    /* Book spines row 2 */
+    repeating-linear-gradient(to right,
+      #906020 0px, #906020 12px, #a85520 12px, #a85520 20px,
+      #508050 20px, #508050 30px, #784028 30px, #784028 40px,
+      #8a3030 40px, #8a3030 48px, #806030 48px, #806030 56px
+    ) no-repeat 36px 148px / 198px 80px,
+    /* Book spines row 3 */
+    repeating-linear-gradient(to right,
+      #7a5030 0px, #7a5030 14px, #aa8828 14px, #aa8828 22px,
+      #6a5080 22px, #6a5080 32px, #c06830 32px, #c06830 40px
+    ) no-repeat 36px 238px / 198px 80px,
+    /* Bookshelf back */
+    linear-gradient(#3a2a18, #2e2010) no-repeat 30px 50px / 210px 278px,
+
+    /* Desk surface */
+    linear-gradient(to bottom, #8a7a50, #7a6a40) no-repeat 280px 360px / 700px 14px,
+    linear-gradient(to bottom, #7a6a40, #6a5a30) no-repeat 280px 374px / 700px 50px,
+    /* Desk front panel */
+    linear-gradient(#6a5a38, #5a4a28) no-repeat 280px 424px / 700px 30px,
+    /* Desk legs */
+    linear-gradient(#6a5a38, #6a5a38) no-repeat 290px 454px / 10px 20px,
+    linear-gradient(#6a5a38, #6a5a38) no-repeat 970px 454px / 10px 20px,
+
+    /* Desk lamp */
+    linear-gradient(#aa8840, #aa8840) no-repeat 940px 340px / 6px 20px,
+    radial-gradient(ellipse 30px 12px at 943px 338px, #ccaa44, transparent),
+
+    /* Chair */
+    linear-gradient(#5a4228, #4a3218) no-repeat 540px 400px / 60px 70px,
+    linear-gradient(#6a5238, #5a4228) no-repeat 535px 394px / 70px 8px,
+
+    /* Wainscoting */
+    linear-gradient(var(--trim), var(--trim)) no-repeat 0 60% / 100% 4px,
+
+    /* Wall + floor - warm brown, clearly visible */
+    linear-gradient(to bottom, var(--wall-light), var(--wall) 62%, #5a3e28 62%, var(--floor) 65%);
+}
+
+/* Study - crisis variant (red-tinted) */
+.study-crisis {
+  --wall: #6a2e2e;
+  --wall-light: #7a3838;
+  --floor: #4a2020;
+  --trim: #8a4848;
+}
+
+/* ================================================
+   8. GAME ROOM - Neon arcade, dark BUT colorful
+   Purple-black with vivid neon highlights
+   ================================================ */
+.room-game-room .room-bg {
+  background:
+    /* Neon glow strips */
+    linear-gradient(to right, transparent, rgba(255,0,100,0.15) 10%, rgba(255,0,100,0.15) 90%, transparent) no-repeat 0 8px / 100% 4px,
+    linear-gradient(to right, transparent, rgba(0,200,255,0.1) 15%, rgba(0,200,255,0.1) 85%, transparent) no-repeat 0 380px / 100% 3px,
+
+    /* Arcade cabinet 1 (far left) */
+    linear-gradient(#3a3a4a, #2e2e3e) no-repeat 20px 100px / 80px 280px,
+    linear-gradient(#1a1a2a, #141420) no-repeat 28px 110px / 64px 80px,
+    radial-gradient(ellipse 55px 65px at 60px 150px, rgba(0,180,255,0.2), transparent),
+    /* Cabinet 1 controls */
+    linear-gradient(#4a4a5a, #4a4a5a) no-repeat 35px 200px / 50px 20px,
+
+    /* Arcade cabinet 2 */
+    linear-gradient(#3e3e4e, #303040) no-repeat 120px 80px / 80px 300px,
+    linear-gradient(#1a1a2a, #141420) no-repeat 128px 90px / 64px 80px,
+    radial-gradient(ellipse 55px 65px at 160px 130px, rgba(220,60,255,0.15), transparent),
+
+    /* Arcade cabinet 3 (far right) */
+    linear-gradient(#3a3a4a, #2e2e3e) no-repeat 1060px 100px / 80px 280px,
+    linear-gradient(#1a1a2a, #141420) no-repeat 1068px 110px / 64px 80px,
+    radial-gradient(ellipse 55px 65px at 1100px 150px, rgba(255,120,0,0.15), transparent),
+
+    /* Arcade cabinet 4 */
+    linear-gradient(#3e3e4e, #303040) no-repeat 1160px 80px / 80px 300px,
+    linear-gradient(#1a1a2a, #141420) no-repeat 1168px 90px / 64px 80px,
+    radial-gradient(ellipse 55px 65px at 1200px 130px, rgba(0,255,120,0.15), transparent),
+
+    /* Neon sign glow (center top) */
+    radial-gradient(ellipse 200px 50px at 50% 20px, rgba(255,0,100,0.12), transparent),
+
+    /* Carpet pattern (classic arcade carpet) */
+    repeating-linear-gradient(45deg,
+      #1e1a28 0px, #1e1a28 8px,
+      #221e30 8px, #221e30 16px
+    ) no-repeat 0 392px / 100% 148px,
+
+    /* Floor line */
+    linear-gradient(#3a3848, #3a3848) no-repeat 0 390px / 100% 3px,
+
+    /* Room - deep purple but VISIBLE */
+    linear-gradient(to bottom, #1e1a2e, #2a2440 60%, #1e1a28 62%);
+}
+
+/* ================================================
+   9. COMPUTER LAB - Monitors, blue glow, tech
+   Blue-gray walls, clearly visible
+   ================================================ */
+.room-computer-lab .room-bg {
+  background:
+    /* Fluorescent light strip */
+    linear-gradient(to right, transparent 15%, rgba(200,220,255,0.12) 25%, rgba(200,220,255,0.15) 50%, rgba(200,220,255,0.12) 75%, transparent 85%) no-repeat 0 0 / 100% 6px,
+
+    /* Monitor glow */
+    radial-gradient(ellipse 400px 200px at 50% 40%, rgba(80,180,255,0.1), transparent),
+
+    /* Left monitor stand */
+    linear-gradient(#5a5a6a, #4a4a5a) no-repeat 80px 180px / 60px 50px,
+    linear-gradient(#6a6a7a, #5a5a6a) no-repeat 70px 168px / 80px 14px,
+    linear-gradient(#3a3a4a, #2a2a3a) no-repeat 75px 140px / 70px 30px,
+    radial-gradient(ellipse 45px 25px at 110px 155px, rgba(50,220,60,0.15), transparent),
+
+    /* Right monitor stand */
+    linear-gradient(#5a5a6a, #4a4a5a) no-repeat 1060px 180px / 60px 50px,
+    linear-gradient(#6a6a7a, #5a5a6a) no-repeat 1050px 168px / 80px 14px,
+    linear-gradient(#3a3a4a, #2a2a3a) no-repeat 1055px 140px / 70px 30px,
+    radial-gradient(ellipse 45px 25px at 1090px 155px, rgba(50,150,255,0.15), transparent),
+
+    /* Long desk surface */
+    linear-gradient(to bottom, #5a5a70 0px, #4a4a60 4px, #4a4a5e 4px) no-repeat 0 55% / 100% 60px,
+    /* Desk front edge */
+    linear-gradient(#3a3a50, #2e2e44) no-repeat 0 calc(55% + 60px) / 100% 8px,
+
+    /* Cable mess (under desk) */
+    linear-gradient(70deg, transparent 49%, #3a3a4a 49%, #3a3a4a 51%, transparent 51%) no-repeat 300px 380px / 100px 60px,
+    linear-gradient(110deg, transparent 49%, #333345 49%, #333345 51%, transparent 51%) no-repeat 600px 380px / 80px 60px,
+
+    /* Floor tiles */
+    repeating-linear-gradient(to right, #2a2e3a 0px, #2a2e3a 64px, #303448 64px, #303448 68px),
+
+    /* Walls - blue-gray, CLEARLY visible */
+    linear-gradient(to bottom, #4a5070 0%, #3a4460 55%, #2a2e3a 62%);
+}
+
+/* ================================================
+   10. WORKSHOP - Creative maker space, pegboard
+   Warm industrial tones, clearly visible tools
+   ================================================ */
+.room-workshop .room-bg {
+  background:
+    /* Yellow work light */
+    radial-gradient(ellipse 300px 280px at 50% 20%, rgba(255,230,120,0.15), transparent),
+
+    /* Pegboard (back wall) */
+    repeating-linear-gradient(to right,
+      transparent 0px, transparent 24px,
+      rgba(100,90,60,0.2) 24px, rgba(100,90,60,0.2) 28px
+    ) no-repeat 280px 20px / 720px 280px,
+    repeating-linear-gradient(to bottom,
+      transparent 0px, transparent 24px,
+      rgba(100,90,60,0.2) 24px, rgba(100,90,60,0.2) 28px
+    ) no-repeat 280px 20px / 720px 280px,
+    /* Pegboard base color */
+    linear-gradient(#6a5a40, #5e5035) no-repeat 280px 20px / 720px 280px,
+
+    /* Hanging tools silhouettes */
+    linear-gradient(#4a4030, #4a4030) no-repeat 300px 60px / 6px 40px,
+    linear-gradient(#4a4030, #4a4030) no-repeat 300px 40px / 20px 6px,
+    linear-gradient(#4a4030, #4a4030) no-repeat 360px 50px / 4px 50px,
+    linear-gradient(#4a4030, #4a4030) no-repeat 350px 70px / 24px 6px,
+    linear-gradient(#4a4030, #4a4030) no-repeat 920px 55px / 6px 45px,
+    linear-gradient(#4a4030, #4a4030) no-repeat 910px 50px / 26px 6px,
+
+    /* Workbench surface */
+    linear-gradient(to bottom, #9a8a60, #8a7a50) no-repeat 0 310px / 100% 16px,
+    linear-gradient(#8a7a50, #7a6a40) no-repeat 0 326px / 100% 50px,
+    /* Bench front */
+    linear-gradient(#6a5a38, #5a4a28) no-repeat 0 376px / 100% 20px,
+    /* Bench legs */
+    linear-gradient(#6a5a38, #6a5a38) no-repeat 40px 396px / 10px 60px,
+    linear-gradient(#6a5a38, #6a5a38) no-repeat 1230px 396px / 10px 60px,
+    linear-gradient(#6a5a38, #6a5a38) no-repeat 640px 396px / 10px 60px,
+
+    /* Shelf with supplies (left) */
+    linear-gradient(#7a6a48, #7a6a48) no-repeat 20px 140px / 180px 8px,
+    linear-gradient(#7a6a48, #7a6a48) no-repeat 20px 240px / 180px 8px,
+    /* Jars/boxes on shelf */
+    linear-gradient(#8a5830, #8a5830) no-repeat 30px 110px / 24px 30px,
+    linear-gradient(#6a7a8a, #6a7a8a) no-repeat 60px 115px / 20px 25px,
+    linear-gradient(#8a8068, #8a8068) no-repeat 90px 108px / 30px 32px,
+    linear-gradient(#7a4828, #7a4828) no-repeat 30px 210px / 28px 30px,
+    linear-gradient(#4a6a4a, #4a6a4a) no-repeat 70px 215px / 22px 25px,
+
+    /* Floor - warm concrete */
+    linear-gradient(to bottom, #5a5240 0%, #4a4230 55%, #3a3220 60%, #2a2210);
+}
+
+/* ================================================
+   11. DARK ROOM - Atmospheric void (INTENTIONALLY dark)
+   ================================================ */
+.room-dark-room .room-bg {
+  background:
+    /* Subtle fire glow from bottom */
+    radial-gradient(ellipse 300px 100px at 30% 100%, rgba(220,100,30,0.08), transparent),
+    radial-gradient(ellipse 200px 80px at 70% 100%, rgba(255,140,50,0.05), transparent),
+    /* Barely visible wall texture */
+    linear-gradient(135deg, #1e1610 0%, transparent 3%) no-repeat 10% 20% / 50px 50px,
+    linear-gradient(135deg, #1e1610 0%, transparent 5%) no-repeat 80% 15% / 40px 60px,
+    linear-gradient(135deg, #1e1610 0%, transparent 4%) no-repeat 60% 70% / 60px 40px,
+    /* Base */
+    linear-gradient(to bottom, #0e0a08, #100c0a, #0a0806);
+}
+
+/* Fog overlay for dark scenes */
+.room-dark-room .fog-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 300px 200px at 20% 60%, rgba(120,120,140,0.08), transparent),
+    radial-gradient(ellipse 250px 150px at 80% 40%, rgba(120,120,140,0.06), transparent);
+  animation: fog-drift 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes fog-drift {
+  0% { transform: translateX(-20px); opacity: 0.6; }
+  100% { transform: translateX(20px); opacity: 1; }
+}
+
+/* Fire flicker */
+.room-dark-room .fire-overlay,
+.room-ruins .fire-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  animation: fire-flicker 3s ease-in-out infinite;
+}
+
+@keyframes fire-flicker {
+  0%, 100% { background: radial-gradient(ellipse 150px 80px at 30% 95%, rgba(255,120,30,0.06), transparent); }
+  33% { background: radial-gradient(ellipse 180px 90px at 32% 95%, rgba(255,140,50,0.08), transparent); }
+  66% { background: radial-gradient(ellipse 130px 70px at 28% 95%, rgba(255,100,20,0.04), transparent); }
+}
+
+/* ================================================
+   12. GALLERY - Clean exhibition space, spotlights
+   Bright cream walls, clearly visible
+   ================================================ */
+.room-gallery .room-bg {
+  background:
+    /* Spotlights from above */
+    radial-gradient(ellipse 180px 350px at 50% 0%, rgba(255,245,210,0.15), transparent),
+    radial-gradient(ellipse 100px 250px at 25% 0%, rgba(255,245,210,0.1), transparent),
+    radial-gradient(ellipse 100px 250px at 75% 0%, rgba(255,245,210,0.1), transparent),
+
+    /* Crown molding */
+    linear-gradient(#bbb8a8, #bbb8a8) no-repeat 0 10px / 100% 4px,
+    linear-gradient(#c4c0b0, #c4c0b0) no-repeat 0 14px / 100% 2px,
+
+    /* Wainscoting */
+    linear-gradient(#9a9488 0px, #9a9488 2px, #d0c8b8 2px, #d0c8b8 24px, #9a9488 24px, #9a9488 26px, transparent 26px) no-repeat 0 60% / 100% 26px,
+
+    /* Bench (center of gallery) */
+    linear-gradient(#6a6050, #5a5040) no-repeat 520px 420px / 240px 12px,
+    linear-gradient(#5a5040, #4a4030) no-repeat 520px 432px / 240px 24px,
+    linear-gradient(#5a5040, #5a5040) no-repeat 530px 456px / 10px 16px,
+    linear-gradient(#5a5040, #5a5040) no-repeat 740px 456px / 10px 16px,
+
+    /* Floor - light hardwood */
+    linear-gradient(to bottom,
+      #ddd8cc, #d0c8bc 62%,
+      #6a6558 62%, #6a6558 62.5%,
+      #5a5548 63%, #4a4438);
+}
+
+/* Gallery underground variant */
+.gallery-underground {
+  filter: brightness(0.5) saturate(0.7);
+}
+
+.gallery-underground .room-bg {
+  background:
+    /* Dim spotlights */
+    radial-gradient(ellipse 120px 300px at 50% 0%, rgba(255,210,120,0.08), transparent),
+
+    /* Rough walls */
+    linear-gradient(#9a9488, #9a9488) no-repeat 0 60% / 100% 3px,
+
+    /* Pipes on ceiling */
+    linear-gradient(#6a6a6a, #6a6a6a) no-repeat 0 18px / 100% 4px,
+    linear-gradient(#606060, #606060) no-repeat 0 26px / 100% 3px,
+
+    /* Floor */
+    linear-gradient(to bottom,
+      #8a8478, #7a7468 62%,
+      #4a4540 63%, #3a3530);
+}
+
+/* ================================================
+   13. RUINS - Destroyed space (INTENTIONALLY dark + fire/fog)
+   ================================================ */
+.room-ruins .room-bg {
+  background:
+    /* Distant fire glow */
+    radial-gradient(ellipse 400px 200px at 25% 90%, rgba(255,100,30,0.12), transparent),
+    radial-gradient(ellipse 300px 150px at 75% 85%, rgba(220,70,15,0.1), transparent),
+    /* Embers */
+    radial-gradient(circle 3px at 200px 400px, rgba(255,160,60,0.4), transparent),
+    radial-gradient(circle 2px at 800px 380px, rgba(255,130,40,0.3), transparent),
+    radial-gradient(circle 3px at 500px 420px, rgba(255,110,30,0.35), transparent),
+
+    /* Broken wall chunks */
+    linear-gradient(135deg, #2a2018 0%, #2a2018 70%, transparent 70%) no-repeat 0 0 / 120px 200px,
+    linear-gradient(135deg, transparent 40%, #241a12 40%) no-repeat 1160px 0 / 120px 180px,
+    linear-gradient(145deg, #2a2018 0%, transparent 60%) no-repeat 0 200px / 80px 100px,
+    /* Rubble on floor */
+    linear-gradient(#2a2018, #2a2018) no-repeat 50px 400px / 40px 20px,
+    linear-gradient(#221810, #221810) no-repeat 200px 410px / 30px 15px,
+    linear-gradient(#2a2018, #2a2018) no-repeat 900px 395px / 50px 25px,
+    linear-gradient(#221810, #221810) no-repeat 1100px 405px / 35px 18px,
+
+    /* Cracked floor */
+    linear-gradient(160deg, transparent 49%, #1a1a1a 49%, #1a1a1a 51%, transparent 51%) no-repeat 400px 380px / 200px 100px,
+    linear-gradient(20deg, transparent 49%, #141414 49%, #141414 51%, transparent 51%) no-repeat 700px 400px / 150px 80px,
+
+    /* Base - dark but warmer than before */
+    linear-gradient(to bottom, #12100c, #0e0c0a, #12100c);
+}
+
+/* Ruins fog overlay */
+.room-ruins .fog-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 400px 250px at 20% 50%, rgba(100,80,50,0.1), transparent),
+    radial-gradient(ellipse 350px 200px at 80% 60%, rgba(100,80,50,0.08), transparent);
+  animation: fog-drift 10s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+/* ================================================
+   14. OFFICE - Corporate cubicles, bright fluorescent
+   Gray/beige, brightly lit, clearly visible
+   ================================================ */
+.room-office .room-bg {
+  background:
+    /* Fluorescent ceiling lights */
+    linear-gradient(to right, transparent 10%, rgba(230,240,250,0.15) 20%, rgba(230,240,250,0.18) 40%, rgba(230,240,250,0.18) 60%, rgba(230,240,250,0.15) 80%, transparent 90%) no-repeat 0 0 / 100% 4px,
+    radial-gradient(ellipse 600px 100px at 50% 0%, rgba(230,240,250,0.1), transparent),
+
+    /* Drop ceiling grid */
+    repeating-linear-gradient(to right, transparent 0px, transparent 156px, rgba(200,200,200,0.1) 156px, rgba(200,200,200,0.1) 160px) no-repeat 0 0 / 100% 20px,
+
+    /* Cubicle wall left */
+    linear-gradient(#a0a098, #909088) no-repeat 40px 120px / 200px 8px,
+    linear-gradient(#b0b0a8, #a0a098) no-repeat 40px 128px / 200px 200px,
+    linear-gradient(#909088, #909088) no-repeat 40px 328px / 200px 4px,
+
+    /* Cubicle wall right */
+    linear-gradient(#a0a098, #909088) no-repeat 1020px 120px / 220px 8px,
+    linear-gradient(#b0b0a8, #a0a098) no-repeat 1020px 128px / 220px 200px,
+    linear-gradient(#909088, #909088) no-repeat 1020px 328px / 220px 4px,
+
+    /* Desk */
+    linear-gradient(#a0a090, #909080) no-repeat 300px 340px / 680px 12px,
+    linear-gradient(#909080, #808070) no-repeat 300px 352px / 680px 40px,
+
+    /* Office chair */
+    linear-gradient(#3a3a3a, #333) no-repeat 580px 400px / 60px 50px,
+    linear-gradient(#444, #3a3a3a) no-repeat 575px 394px / 70px 8px,
+    /* Chair wheels */
+    radial-gradient(circle 4px at 590px 455px, #444, transparent),
+    radial-gradient(circle 4px at 630px 455px, #444, transparent),
+
+    /* Water cooler (right) */
+    linear-gradient(#a0d0e8, #a0d0e8) no-repeat 960px 220px / 20px 40px,
+    linear-gradient(#e8e8e8, #d8d8d8) no-repeat 955px 260px / 30px 60px,
+
+    /* Motivational poster on cubicle wall */
+    linear-gradient(#fff, #f0f0f0) no-repeat 100px 160px / 40px 30px,
+
+    /* Carpet - beige/tan, bright */
+    linear-gradient(to bottom,
+      #c0c0b8, #b0b0a8 62%,
+      #7a7a74 62.5%, #6a6a64 63%, #5a5a54);
+}

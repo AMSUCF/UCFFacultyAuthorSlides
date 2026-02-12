@@ -1,0 +1,469 @@
+/* ============================================
+   SCUMM UI Layout
+   Fixed 1280x720 grid mimicking LucasArts engine
+   ============================================ */
+
+:root {
+  --game-width: 1280;
+  --game-height: 720;
+  --font-main: 'Press Start 2P', monospace;
+  --room-bar-h: 28px;
+  --dialogue-h: 100px;
+  --verb-bar-h: 52px;
+  --viewport-h: calc(720px - var(--room-bar-h) - var(--dialogue-h) - var(--verb-bar-h));
+  --text-color: #f0e8d0;
+  --text-shadow: #000;
+  --verb-bg: #1a1a2e;
+  --verb-text: #7b7b9e;
+  --verb-active: #ffcc00;
+  --dialogue-bg: #0a0a14;
+  --room-bar-bg: #0d0d1a;
+  --scanline-opacity: 0.04;
+}
+
+/* Game container -- fixed 1280x720, scaled by JS */
+#game {
+  position: absolute;
+  width: 1280px;
+  height: 720px;
+  transform-origin: top left;
+  font-family: var(--font-main);
+  color: var(--text-color);
+  overflow: hidden;
+  background: #000;
+  display: grid;
+  grid-template-rows: var(--room-bar-h) 1fr var(--dialogue-h) var(--verb-bar-h);
+}
+
+/* CRT scanline overlay */
+#game::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, var(--scanline-opacity)) 2px,
+    rgba(0, 0, 0, var(--scanline-opacity)) 4px
+  );
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* Room name bar */
+#room-bar {
+  background: var(--room-bar-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8888aa;
+  border-bottom: 2px solid #222244;
+  z-index: 10;
+}
+
+/* Room viewport */
+#viewport {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Room container (backgrounds, objects, sprite live here) */
+#room {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* Transition overlay */
+#transition-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+/* Object container */
+#objects {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+
+/* Individual object */
+.scene-object {
+  position: absolute;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.scene-object img {
+  box-sizing: border-box;
+  display: block;
+}
+
+.scene-object.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Object label tooltip */
+.object-label {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 7px;
+  color: var(--verb-active);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.scene-object.visible .object-label {
+  opacity: 1;
+  animation: label-fade 2s ease forwards;
+}
+
+@keyframes label-fade {
+  0% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ---- Object type frames ---- */
+
+/* Monitor / CRT screen */
+.obj-monitor-screen {
+  border: 6px solid #333;
+  border-radius: 4px;
+  box-shadow:
+    inset 0 0 20px rgba(100, 200, 255, 0.15),
+    0 4px 0 #222,
+    0 6px 0 #444;
+  background: #111;
+  padding: 4px;
+  overflow: hidden;
+}
+
+.obj-monitor-screen img {
+  border: 2px solid #1a1a1a;
+}
+
+/* Book cover */
+.obj-book-cover {
+  box-shadow:
+    4px 4px 0 #1a1a1a,
+    -2px 0 0 #8b7355;
+  transform: perspective(400px) rotateY(-3deg);
+  border: 3px solid #4a3a2a;
+  overflow: hidden;
+}
+
+/* Book on pedestal */
+.obj-book-pedestal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+}
+
+.obj-book-pedestal img {
+  box-shadow:
+    4px 4px 0 #1a1a1a,
+    -2px 0 0 #8b7355;
+  border: 3px solid #4a3a2a;
+}
+
+.obj-book-pedestal::after {
+  content: '';
+  display: block;
+  width: 80%;
+  height: 8px;
+  background: linear-gradient(to bottom, #665544, #443322);
+  border-radius: 0 0 2px 2px;
+  margin-top: 2px;
+  box-shadow: 0 4px 12px rgba(255, 200, 100, 0.3);
+}
+
+/* Wall poster */
+.obj-wall-poster {
+  border: 4px solid #555;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1px #333;
+  overflow: hidden;
+}
+
+/* Newspaper clipping */
+.obj-newspaper {
+  background: #d4c89a;
+  padding: 6px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+  clip-path: polygon(0% 2%, 98% 0%, 100% 97%, 3% 100%);
+  transform: rotate(-1deg);
+}
+
+.obj-newspaper img {
+  filter: sepia(20%) contrast(1.1);
+}
+
+/* iPad screen */
+.obj-ipad-screen {
+  border: 8px solid #222;
+  border-radius: 12px;
+  background: #111;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 2px;
+  overflow: hidden;
+}
+
+.obj-ipad-screen img {
+  border-radius: 4px;
+}
+
+/* Wall text (no image, text plaque) */
+.obj-wall-text {
+  background: rgba(10, 10, 20, 0.85);
+  border: 2px solid #444;
+  border-left: 4px solid var(--verb-active);
+  padding: 20px 24px;
+  max-width: 700px;
+  font-size: 9px;
+  line-height: 2;
+  color: #d0d0d0;
+}
+
+.obj-wall-text .quote-attr {
+  display: block;
+  margin-top: 12px;
+  color: var(--verb-active);
+  font-size: 8px;
+}
+
+/* Link list */
+.obj-link-list {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.scene-link {
+  font-family: var(--font-main);
+  font-size: 10px;
+  color: var(--verb-active);
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.scene-link:hover {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(255, 204, 0, 0.6);
+}
+
+/* Fullscreen atmospheric */
+.obj-fullscreen {
+  border: none;
+  box-shadow: none;
+}
+
+.obj-fullscreen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+/* ---- Dialogue text bar ---- */
+#dialogue {
+  background: var(--dialogue-bg);
+  border-top: 2px solid #222244;
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 24px;
+  font-size: 10px;
+  line-height: 2;
+  color: var(--text-color);
+  overflow: hidden;
+  z-index: 10;
+}
+
+#dialogue-text {
+  max-height: 76px;
+  overflow: hidden;
+}
+
+/* Typewriter cursor */
+#dialogue-text::after {
+  content: '\2588';
+  animation: blink-cursor 530ms step-end infinite;
+  color: var(--verb-active);
+}
+
+#dialogue-text.done::after {
+  display: none;
+}
+
+@keyframes blink-cursor {
+  50% { opacity: 0; }
+}
+
+/* ---- Verb bar ---- */
+#verb-bar {
+  background: var(--verb-bg);
+  border-top: 2px solid #222244;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px;
+  z-index: 10;
+}
+
+.verb {
+  font-family: var(--font-main);
+  font-size: 10px;
+  color: var(--verb-text);
+  padding: 6px 12px;
+  transition: color 0.2s;
+  letter-spacing: 1px;
+}
+
+.verb.active {
+  color: var(--verb-active);
+  text-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
+}
+
+/* Autoplay separator */
+.verb-sep {
+  display: inline-block;
+  width: 1px;
+  height: 24px;
+  background: #333355;
+  margin: 0 4px;
+}
+
+/* Autoplay button pulse when playing */
+#autoplay-btn.playing {
+  animation: autoplay-pulse 2s ease-in-out infinite;
+}
+
+@keyframes autoplay-pulse {
+  0%, 100% { color: var(--verb-active); text-shadow: 0 0 8px rgba(255, 204, 0, 0.4); }
+  50% { color: #cc9900; text-shadow: 0 0 4px rgba(255, 204, 0, 0.2); }
+}
+
+/* ---- Preloader ---- */
+#preloader {
+  position: absolute;
+  inset: 0;
+  background: #0a0a14;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  font-family: var(--font-main);
+  color: var(--text-color);
+}
+
+#preloader.hidden {
+  display: none;
+}
+
+#preloader-title {
+  font-size: 12px;
+  margin-bottom: 32px;
+  letter-spacing: 2px;
+}
+
+#progress-bar-outer {
+  width: 400px;
+  height: 16px;
+  border: 3px solid #555;
+  background: #111;
+  padding: 2px;
+}
+
+#progress-bar-inner {
+  height: 100%;
+  width: 0%;
+  background: var(--verb-active);
+  transition: width 0.15s;
+  image-rendering: pixelated;
+}
+
+#preloader-status {
+  margin-top: 16px;
+  font-size: 8px;
+  color: #666;
+}
+
+/* ---- Title screen ---- */
+#title-screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+  background: transparent;
+  pointer-events: none;
+}
+
+#title-screen.hidden {
+  display: none;
+}
+
+.title-border {
+  border: 4px solid #554400;
+  box-shadow:
+    inset 0 0 0 2px #332200,
+    0 0 40px rgba(255, 200, 0, 0.1);
+  padding: 48px 64px;
+  text-align: center;
+}
+
+.title-main {
+  font-size: 18px;
+  line-height: 2;
+  color: var(--verb-active);
+  text-shadow: 0 0 20px rgba(255, 200, 0, 0.3);
+  margin-bottom: 24px;
+}
+
+.title-sub {
+  font-size: 9px;
+  color: #8888aa;
+  line-height: 2.2;
+  margin-bottom: 32px;
+}
+
+.title-prompt {
+  font-size: 10px;
+  color: var(--text-color);
+  animation: blink-cursor 530ms step-end infinite;
+}
+
+/* ---- Scene counter (debug) ---- */
+#scene-counter {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  font-size: 8px;
+  color: #444;
+  z-index: 90;
+  display: none;
+}
+
+#scene-counter.visible {
+  display: block;
+}

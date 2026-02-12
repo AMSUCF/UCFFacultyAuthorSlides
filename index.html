@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280">
+  <title>How to Write at the End of the World</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/scumm.css">
+  <link rel="stylesheet" href="css/rooms.css">
+  <link rel="stylesheet" href="css/sprites.css">
+  <link rel="stylesheet" href="css/transitions.css">
+
+  <style>
+    /* Inline fallback in case font file doesn't load */
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=block');
+  </style>
+</head>
+<body>
+
+  <!-- ========== PRELOADER ========== -->
+  <div id="preloader">
+    <div id="preloader-title">LOADING...</div>
+    <div id="progress-bar-outer">
+      <div id="progress-bar-inner"></div>
+    </div>
+    <div id="preloader-status">Preparing adventure...</div>
+  </div>
+
+  <!-- ========== GAME CONTAINER ========== -->
+  <div id="game">
+
+    <!-- Room Name Bar -->
+    <div id="room-bar">The Beginning</div>
+
+    <!-- Room Viewport -->
+    <div id="viewport">
+
+      <!-- Room (background + template overlays) -->
+      <div id="room"></div>
+
+      <!-- Objects layer -->
+      <div id="objects"></div>
+
+      <!-- Character Sprite -->
+      <div id="sprite" class="frame-idle hidden"></div>
+
+      <!-- Transition Overlay -->
+      <div id="transition-overlay"></div>
+
+      <!-- Title Screen Overlay -->
+      <div id="title-screen">
+        <div class="title-border">
+          <div class="title-main">How to Write at the<br>End of the World</div>
+          <div class="title-sub">
+            Anastasia Salter<br>
+            Professor of English, UCF<br>
+            President, Electronic Literature Organization
+          </div>
+          <div class="title-prompt">PRESS ANY KEY TO START</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Dialogue Text Bar -->
+    <div id="dialogue">
+      <div id="dialogue-text" class="done"></div>
+    </div>
+
+    <!-- Verb Bar (decorative) -->
+    <div id="verb-bar">
+      <button class="verb" data-verb="open">Open</button>
+      <button class="verb" data-verb="close">Close</button>
+      <button class="verb" data-verb="look">Look at</button>
+      <button class="verb" data-verb="pickup">Pick up</button>
+      <button class="verb" data-verb="talk">Talk to</button>
+      <button class="verb" data-verb="use">Use</button>
+      <span class="verb-sep"></span>
+      <button class="verb" id="autoplay-btn" data-verb="play">Play</button>
+    </div>
+
+    <!-- Scene Counter (debug, toggle with D) -->
+    <div id="scene-counter">Scene 0/25</div>
+
+  </div>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="js/scenes.js"></script>
+  <script src="js/typewriter.js"></script>
+  <script src="js/sprites.js"></script>
+  <script src="js/transitions.js"></script>
+  <script src="js/preloader.js"></script>
+  <script src="js/autoplay.js"></script>
+  <script src="js/engine.js"></script>
+
+</body>
+</html>
