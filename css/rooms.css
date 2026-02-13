@@ -192,62 +192,66 @@
     radial-gradient(circle 16px at 90% 8%, rgba(255,255,230,0.95), rgba(255,255,230,0.3) 50%, transparent 100%),
     radial-gradient(circle 60px at 90% 8%, rgba(200,200,240,0.15), transparent),
 
-    /* Palm tree left - fronds */
-    linear-gradient(150deg, #2a7a35 0%, #2a7a35 45%, transparent 45%) no-repeat 40px 48px / 90px 55px,
-    linear-gradient(180deg, #1e6828 0%, #1e6828 50%, transparent 50%) no-repeat 25px 38px / 70px 65px,
-    linear-gradient(120deg, #2e8838 0%, #2e8838 40%, transparent 40%) no-repeat 80px 42px / 80px 50px,
-    linear-gradient(200deg, #1c6426 0%, #1c6426 40%, transparent 40%) no-repeat 10px 55px / 60px 50px,
+    /* Palm tree left - fronds (crown at ~79, 95) */
+    linear-gradient(130deg, #1c6426 0%, #1c6426 40%, transparent 40%) no-repeat 0px 95px / 85px 55px,
+    linear-gradient(145deg, #2a7a35 0%, #2a7a35 44%, transparent 44%) no-repeat 5px 67px / 82px 66px,
+    linear-gradient(165deg, #1e6828 0%, #1e6828 46%, transparent 46%) no-repeat 22px 50px / 62px 82px,
+    linear-gradient(190deg, #2e8838 0%, #2e8838 46%, transparent 46%) no-repeat 55px 47px / 48px 85px,
+    linear-gradient(220deg, #247a30 0%, #247a30 40%, transparent 40%) no-repeat 76px 63px / 55px 70px,
+    radial-gradient(circle 10px at 79px 92px, #1a5a22, transparent),
     /* Palm tree left - trunk */
     linear-gradient(to right, #6a5030, #7a6040 50%, #6a5030) no-repeat 73px 95px / 12px 230px,
 
-    /* Palm tree right - fronds */
-    linear-gradient(210deg, #2a7a35 0%, #2a7a35 45%, transparent 45%) no-repeat 1100px 38px / 90px 55px,
-    linear-gradient(180deg, #1e6828 0%, #1e6828 50%, transparent 50%) no-repeat 1120px 30px / 70px 65px,
-    linear-gradient(240deg, #2e8838 0%, #2e8838 40%, transparent 40%) no-repeat 1070px 42px / 80px 50px,
-    linear-gradient(160deg, #1c6426 0%, #1c6426 40%, transparent 40%) no-repeat 1150px 48px / 60px 50px,
+    /* Palm tree right - fronds (crown at ~1134, 82) */
+    linear-gradient(230deg, #1c6426 0%, #1c6426 40%, transparent 40%) no-repeat 1128px 82px / 85px 55px,
+    linear-gradient(215deg, #2a7a35 0%, #2a7a35 44%, transparent 44%) no-repeat 1126px 54px / 82px 66px,
+    linear-gradient(195deg, #1e6828 0%, #1e6828 46%, transparent 46%) no-repeat 1129px 37px / 62px 82px,
+    linear-gradient(170deg, #2e8838 0%, #2e8838 46%, transparent 46%) no-repeat 1110px 35px / 48px 85px,
+    linear-gradient(140deg, #247a30 0%, #247a30 40%, transparent 40%) no-repeat 1082px 50px / 55px 70px,
+    radial-gradient(circle 10px at 1134px 79px, #1a5a22, transparent),
     /* Palm tree right - trunk */
     linear-gradient(to right, #6a5030, #7a6040 50%, #6a5030) no-repeat 1128px 82px / 12px 242px,
 
-    /* Building - lit windows row 1 */
-    radial-gradient(ellipse 55px 40px at 375px 165px, rgba(255,200,80,0.25), transparent),
-    radial-gradient(ellipse 55px 40px at 555px 165px, rgba(255,200,80,0.25), transparent),
-    radial-gradient(ellipse 55px 40px at 735px 165px, rgba(255,200,80,0.25), transparent),
-    radial-gradient(ellipse 55px 40px at 905px 165px, rgba(255,200,80,0.25), transparent),
-    linear-gradient(#eebb44, #ddaa30) no-repeat 350px 148px / 48px 32px,
-    linear-gradient(#eebb44, #ddaa30) no-repeat 530px 148px / 48px 32px,
-    linear-gradient(#eebb44, #ddaa30) no-repeat 710px 148px / 48px 32px,
-    linear-gradient(#eebb44, #ddaa30) no-repeat 880px 148px / 48px 32px,
+    /* Building - lit windows row 1 (symmetric around facade center x=620) */
+    radial-gradient(ellipse 55px 40px at 382px 165px, rgba(255,200,80,0.25), transparent),
+    radial-gradient(ellipse 55px 40px at 530px 165px, rgba(255,200,80,0.25), transparent),
+    radial-gradient(ellipse 55px 40px at 710px 165px, rgba(255,200,80,0.25), transparent),
+    radial-gradient(ellipse 55px 40px at 858px 165px, rgba(255,200,80,0.25), transparent),
+    linear-gradient(#eebb44, #ddaa30) no-repeat 358px 148px / 48px 32px,
+    linear-gradient(#eebb44, #ddaa30) no-repeat 506px 148px / 48px 32px,
+    linear-gradient(#eebb44, #ddaa30) no-repeat 686px 148px / 48px 32px,
+    linear-gradient(#eebb44, #ddaa30) no-repeat 834px 148px / 48px 32px,
 
     /* Building - lit windows row 2 */
-    linear-gradient(#dda830, #cc9920) no-repeat 350px 220px / 48px 32px,
-    linear-gradient(#dda830, #cc9920) no-repeat 530px 220px / 48px 32px,
-    linear-gradient(#cc9920, #bb8810) no-repeat 710px 220px / 48px 32px,
-    linear-gradient(#dda830, #cc9920) no-repeat 880px 220px / 48px 32px,
+    linear-gradient(#dda830, #cc9920) no-repeat 358px 220px / 48px 32px,
+    linear-gradient(#dda830, #cc9920) no-repeat 506px 220px / 48px 32px,
+    linear-gradient(#cc9920, #bb8810) no-repeat 686px 220px / 48px 32px,
+    linear-gradient(#dda830, #cc9920) no-repeat 834px 220px / 48px 32px,
 
     /* Window dividers (cross in each window) */
-    linear-gradient(#8a7a50, #8a7a50) no-repeat 372px 162px / 2px 20px,
-    linear-gradient(#8a7a50, #8a7a50) no-repeat 356px 155px / 36px 2px,
-    linear-gradient(#8a7a50, #8a7a50) no-repeat 552px 162px / 2px 20px,
-    linear-gradient(#8a7a50, #8a7a50) no-repeat 536px 155px / 36px 2px,
-    linear-gradient(#8a7a50, #8a7a50) no-repeat 732px 162px / 2px 20px,
-    linear-gradient(#8a7a50, #8a7a50) no-repeat 716px 155px / 36px 2px,
-    linear-gradient(#8a7a50, #8a7a50) no-repeat 902px 162px / 2px 20px,
-    linear-gradient(#8a7a50, #8a7a50) no-repeat 886px 155px / 36px 2px,
+    linear-gradient(#8a7a50, #8a7a50) no-repeat 380px 162px / 2px 20px,
+    linear-gradient(#8a7a50, #8a7a50) no-repeat 364px 155px / 36px 2px,
+    linear-gradient(#8a7a50, #8a7a50) no-repeat 528px 162px / 2px 20px,
+    linear-gradient(#8a7a50, #8a7a50) no-repeat 512px 155px / 36px 2px,
+    linear-gradient(#8a7a50, #8a7a50) no-repeat 708px 162px / 2px 20px,
+    linear-gradient(#8a7a50, #8a7a50) no-repeat 692px 155px / 36px 2px,
+    linear-gradient(#8a7a50, #8a7a50) no-repeat 856px 162px / 2px 20px,
+    linear-gradient(#8a7a50, #8a7a50) no-repeat 840px 155px / 36px 2px,
 
     /* Building - entrance glow */
-    radial-gradient(ellipse 50px 70px at 616px 290px, rgba(255,210,120,0.3), transparent),
+    radial-gradient(ellipse 50px 70px at 620px 290px, rgba(255,210,120,0.3), transparent),
     /* Building - entrance door */
-    linear-gradient(#4a2a10, #3a1a08) no-repeat 588px 256px / 56px 74px,
+    linear-gradient(#4a2a10, #3a1a08) no-repeat 592px 256px / 56px 74px,
     /* Entrance frame + arch */
-    linear-gradient(#b09870, #b09870) no-repeat 582px 248px / 68px 6px,
-    linear-gradient(#b09870, #b09870) no-repeat 582px 248px / 6px 82px,
-    linear-gradient(#b09870, #b09870) no-repeat 644px 248px / 6px 82px,
+    linear-gradient(#b09870, #b09870) no-repeat 586px 248px / 68px 6px,
+    linear-gradient(#b09870, #b09870) no-repeat 586px 248px / 6px 82px,
+    linear-gradient(#b09870, #b09870) no-repeat 648px 248px / 6px 82px,
 
-    /* Building - columns */
-    linear-gradient(to right, #a08a68, #b09a78 50%, #a08a68) no-repeat 300px 130px / 16px 198px,
-    linear-gradient(to right, #a08a68, #b09a78 50%, #a08a68) no-repeat 470px 130px / 16px 198px,
-    linear-gradient(to right, #a08a68, #b09a78 50%, #a08a68) no-repeat 780px 130px / 16px 198px,
-    linear-gradient(to right, #a08a68, #b09a78 50%, #a08a68) no-repeat 940px 130px / 16px 198px,
+    /* Building - columns (symmetric around x=620) */
+    linear-gradient(to right, #a08a68, #b09a78 50%, #a08a68) no-repeat 292px 130px / 16px 198px,
+    linear-gradient(to right, #a08a68, #b09a78 50%, #a08a68) no-repeat 457px 130px / 16px 198px,
+    linear-gradient(to right, #a08a68, #b09a78 50%, #a08a68) no-repeat 767px 130px / 16px 198px,
+    linear-gradient(to right, #a08a68, #b09a78 50%, #a08a68) no-repeat 932px 130px / 16px 198px,
 
     /* Building - roof cornice */
     linear-gradient(#7a6a50, #8a7a60) no-repeat 270px 118px / 700px 14px,
@@ -321,50 +325,173 @@
 }
 
 /* ================================================
-   4. SERVER ROOM - Blue-lit tech cave
-   Dark but DISTINCTLY blue, not purple
+   4. DATA CENTER - Dense blue-lit hardware stacks
+   Rows of tall racks, blinking status LEDs
    ================================================ */
-.room-server-room .room-bg {
+.room-data-center .room-bg {
   background:
-    /* Overhead blue glow */
-    radial-gradient(ellipse 500px 150px at 50% 0%, rgba(60,140,220,0.15), transparent),
+    /* Overhead blue glow strips (cold aisle lighting) */
+    radial-gradient(ellipse 300px 100px at 25% 0%, rgba(60,150,240,0.18), transparent),
+    radial-gradient(ellipse 300px 100px at 75% 0%, rgba(60,150,240,0.18), transparent),
+    linear-gradient(rgba(40,120,220,0.06), transparent) no-repeat 0 0 / 100% 12px,
 
-    /* Server rack 1 (left) */
-    linear-gradient(#4a4a5a, #3e3e50) no-repeat 40px 20px / 100px 360px,
-    repeating-linear-gradient(to bottom, #555568 0px, #555568 16px, #48485c 16px, #48485c 20px) no-repeat 48px 28px / 84px 344px,
-    /* LEDs rack 1 */
-    radial-gradient(circle 3px at 52px 44px, #0f0, transparent),
-    radial-gradient(circle 3px at 52px 64px, #0f0, transparent),
-    radial-gradient(circle 3px at 52px 84px, #0f0, transparent),
-    radial-gradient(circle 3px at 52px 104px, #ff4, transparent),
-    radial-gradient(circle 3px at 52px 124px, #0f0, transparent),
+    /* === LEFT WALL RACKS === */
 
-    /* Server rack 2 */
-    linear-gradient(#4a4a5a, #3e3e50) no-repeat 160px 20px / 100px 360px,
-    repeating-linear-gradient(to bottom, #555568 0px, #555568 16px, #48485c 16px, #48485c 20px) no-repeat 168px 28px / 84px 344px,
-    /* LEDs rack 2 */
-    radial-gradient(circle 3px at 172px 44px, #0f0, transparent),
-    radial-gradient(circle 3px at 172px 64px, #f44, transparent),
-    radial-gradient(circle 3px at 172px 84px, #0f0, transparent),
-    radial-gradient(circle 3px at 172px 104px, #0f0, transparent),
+    /* Rack 1 - tall full rack */
+    linear-gradient(#42424f, #38384a) no-repeat 20px 16px / 90px 370px,
+    repeating-linear-gradient(to bottom, #50506a 0px, #50506a 14px, #3c3c52 14px, #3c3c52 16px, #44445c 16px, #44445c 30px, #3c3c52 30px, #3c3c52 32px) no-repeat 26px 22px / 78px 358px,
+    /* Rack 1 - drive bay faces */
+    linear-gradient(#555570, #4a4a62) no-repeat 30px 24px / 50px 12px,
+    linear-gradient(#555570, #4a4a62) no-repeat 30px 40px / 50px 12px,
+    linear-gradient(#555570, #4a4a62) no-repeat 30px 56px / 50px 12px,
+    linear-gradient(#555570, #4a4a62) no-repeat 30px 72px / 50px 12px,
+    linear-gradient(#555570, #4a4a62) no-repeat 30px 88px / 50px 12px,
+    linear-gradient(#555570, #4a4a62) no-repeat 30px 104px / 50px 12px,
 
-    /* Server rack 3 (right) */
-    linear-gradient(#4a4a5a, #3e3e50) no-repeat 1020px 20px / 100px 360px,
-    repeating-linear-gradient(to bottom, #555568 0px, #555568 16px, #48485c 16px, #48485c 20px) no-repeat 1028px 28px / 84px 344px,
+    /* Rack 2 */
+    linear-gradient(#46465a, #3a3a4e) no-repeat 120px 16px / 90px 370px,
+    repeating-linear-gradient(to bottom, #52526c 0px, #52526c 14px, #3e3e54 14px, #3e3e54 16px, #46465e 16px, #46465e 30px, #3e3e54 30px, #3e3e54 32px) no-repeat 126px 22px / 78px 358px,
+    /* Rack 2 - drive bays */
+    linear-gradient(#585872, #4c4c64) no-repeat 130px 24px / 50px 12px,
+    linear-gradient(#585872, #4c4c64) no-repeat 130px 40px / 50px 12px,
+    linear-gradient(#585872, #4c4c64) no-repeat 130px 56px / 50px 12px,
+    linear-gradient(#585872, #4c4c64) no-repeat 130px 72px / 50px 12px,
 
-    /* Server rack 4 (far right) */
-    linear-gradient(#4a4a5a, #3e3e50) no-repeat 1140px 20px / 100px 360px,
-    repeating-linear-gradient(to bottom, #555568 0px, #555568 16px, #48485c 16px, #48485c 20px) no-repeat 1148px 28px / 84px 344px,
+    /* Rack 3 - half-height networking gear */
+    linear-gradient(#40404e, #36364a) no-repeat 220px 180px / 90px 206px,
+    repeating-linear-gradient(to bottom, #4e4e66 0px, #4e4e66 18px, #3a3a50 18px, #3a3a50 20px) no-repeat 226px 186px / 78px 194px,
+    /* Patch panel ports */
+    linear-gradient(#333348, #333348) no-repeat 232px 192px / 66px 10px,
+    linear-gradient(#333348, #333348) no-repeat 232px 214px / 66px 10px,
 
-    /* Cable trays (horizontal) */
-    linear-gradient(#555, #555) no-repeat 0 14px / 100% 3px,
-    linear-gradient(#4a4a50, #4a4a50) no-repeat 0 384px / 100% 3px,
+    /* === RIGHT WALL RACKS === */
 
-    /* Floor tiles */
-    repeating-linear-gradient(to right, #1e2430 0px, #1e2430 60px, #242a38 60px, #242a38 64px),
+    /* Rack 5 */
+    linear-gradient(#42424f, #38384a) no-repeat 980px 16px / 90px 370px,
+    repeating-linear-gradient(to bottom, #50506a 0px, #50506a 14px, #3c3c52 14px, #3c3c52 16px, #44445c 16px, #44445c 30px, #3c3c52 30px, #3c3c52 32px) no-repeat 986px 22px / 78px 358px,
+    linear-gradient(#555570, #4a4a62) no-repeat 990px 24px / 50px 12px,
+    linear-gradient(#555570, #4a4a62) no-repeat 990px 40px / 50px 12px,
+    linear-gradient(#555570, #4a4a62) no-repeat 990px 56px / 50px 12px,
+    linear-gradient(#555570, #4a4a62) no-repeat 990px 72px / 50px 12px,
+    linear-gradient(#555570, #4a4a62) no-repeat 990px 88px / 50px 12px,
 
-    /* Room - distinctly BLUE walls */
-    linear-gradient(to bottom, #2e3a50 0%, #283448 60%, #1e2430 65%);
+    /* Rack 6 */
+    linear-gradient(#46465a, #3a3a4e) no-repeat 1080px 16px / 90px 370px,
+    repeating-linear-gradient(to bottom, #52526c 0px, #52526c 14px, #3e3e54 14px, #3e3e54 16px, #46465e 16px, #46465e 30px, #3e3e54 30px, #3e3e54 32px) no-repeat 1086px 22px / 78px 358px,
+    linear-gradient(#585872, #4c4c64) no-repeat 1090px 24px / 50px 12px,
+    linear-gradient(#585872, #4c4c64) no-repeat 1090px 40px / 50px 12px,
+    linear-gradient(#585872, #4c4c64) no-repeat 1090px 56px / 50px 12px,
+
+    /* Rack 7 - half-height right */
+    linear-gradient(#40404e, #36364a) no-repeat 1180px 180px / 90px 206px,
+    repeating-linear-gradient(to bottom, #4e4e66 0px, #4e4e66 18px, #3a3a50 18px, #3a3a50 20px) no-repeat 1186px 186px / 78px 194px,
+
+    /* === CABLE TRAYS === */
+    linear-gradient(#555, #555) no-repeat 0 10px / 100% 3px,
+    linear-gradient(#4a4a55, #4a4a55) no-repeat 0 390px / 100% 3px,
+    /* Vertical cable runs between racks */
+    linear-gradient(#333348, #333348) no-repeat 115px 10px / 3px 376px,
+    linear-gradient(#333348, #333348) no-repeat 975px 10px / 3px 376px,
+
+    /* Raised floor tiles */
+    repeating-linear-gradient(to right, #1a2030 0px, #1a2030 58px, #222a3a 58px, #222a3a 62px) no-repeat 0 396px / 100% 120px,
+    repeating-linear-gradient(to right, #1e2434 0px, #1e2434 58px, #262e40 58px, #262e40 62px) no-repeat 0 440px / 100% 80px,
+
+    /* Room - cold blue walls */
+    linear-gradient(to bottom, #2a3650 0%, #243048 55%, #1a2030 65%);
+}
+
+/* Data center blinking LEDs */
+.room-data-center .room-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    /* Left rack 1 LEDs */
+    radial-gradient(circle 3px at 84px 30px, #0f0, transparent),
+    radial-gradient(circle 3px at 84px 46px, #0f0, transparent),
+    radial-gradient(circle 3px at 84px 62px, #0f0, transparent),
+    radial-gradient(circle 3px at 84px 78px, #0f0, transparent),
+    radial-gradient(circle 3px at 84px 94px, #ff4, transparent),
+    radial-gradient(circle 3px at 84px 110px, #0f0, transparent),
+    radial-gradient(circle 3px at 100px 30px, #0af, transparent),
+    radial-gradient(circle 3px at 100px 46px, #0af, transparent),
+    radial-gradient(circle 3px at 100px 62px, #0f0, transparent),
+    /* Left rack 2 LEDs */
+    radial-gradient(circle 3px at 184px 30px, #0f0, transparent),
+    radial-gradient(circle 3px at 184px 46px, #f44, transparent),
+    radial-gradient(circle 3px at 184px 62px, #0f0, transparent),
+    radial-gradient(circle 3px at 184px 78px, #0f0, transparent),
+    radial-gradient(circle 3px at 200px 30px, #0af, transparent),
+    radial-gradient(circle 3px at 200px 46px, #0af, transparent),
+    radial-gradient(circle 3px at 200px 62px, #0af, transparent),
+    /* Left rack 3 LEDs */
+    radial-gradient(circle 3px at 284px 198px, #0f0, transparent),
+    radial-gradient(circle 3px at 284px 220px, #ff4, transparent),
+    radial-gradient(circle 3px at 300px 198px, #0af, transparent),
+    /* Right rack 5 LEDs */
+    radial-gradient(circle 3px at 1044px 30px, #0f0, transparent),
+    radial-gradient(circle 3px at 1044px 46px, #0f0, transparent),
+    radial-gradient(circle 3px at 1044px 62px, #ff4, transparent),
+    radial-gradient(circle 3px at 1044px 78px, #0f0, transparent),
+    radial-gradient(circle 3px at 1044px 94px, #0f0, transparent),
+    radial-gradient(circle 3px at 1060px 30px, #0af, transparent),
+    radial-gradient(circle 3px at 1060px 46px, #0af, transparent),
+    /* Right rack 6 LEDs */
+    radial-gradient(circle 3px at 1144px 30px, #0f0, transparent),
+    radial-gradient(circle 3px at 1144px 46px, #0f0, transparent),
+    radial-gradient(circle 3px at 1144px 62px, #0f0, transparent),
+    radial-gradient(circle 3px at 1160px 30px, #f44, transparent),
+    radial-gradient(circle 3px at 1160px 46px, #0af, transparent),
+    /* Right rack 7 LEDs */
+    radial-gradient(circle 3px at 1244px 198px, #0f0, transparent),
+    radial-gradient(circle 3px at 1244px 220px, #0f0, transparent);
+  animation: ledBlink 1.8s steps(1) infinite;
+  pointer-events: none;
+}
+
+@keyframes ledBlink {
+  0%   { opacity: 1; }
+  45%  { opacity: 1; }
+  50%  { opacity: 0.3; }
+  55%  { opacity: 1; }
+  80%  { opacity: 1; }
+  85%  { opacity: 0.5; }
+  90%  { opacity: 1; }
+}
+
+/* Second LED layer with offset timing */
+.room-data-center .room-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    /* Scattered activity LEDs - different blink phase */
+    radial-gradient(circle 2px at 92px 140px, #f80, transparent),
+    radial-gradient(circle 2px at 92px 170px, #f80, transparent),
+    radial-gradient(circle 2px at 92px 200px, #0f0, transparent),
+    radial-gradient(circle 2px at 192px 110px, #f80, transparent),
+    radial-gradient(circle 2px at 192px 140px, #0f0, transparent),
+    radial-gradient(circle 2px at 192px 170px, #f80, transparent),
+    radial-gradient(circle 2px at 1052px 110px, #f80, transparent),
+    radial-gradient(circle 2px at 1052px 140px, #0f0, transparent),
+    radial-gradient(circle 2px at 1052px 170px, #f80, transparent),
+    radial-gradient(circle 2px at 1152px 110px, #f80, transparent),
+    radial-gradient(circle 2px at 1152px 140px, #f80, transparent),
+    radial-gradient(circle 2px at 1152px 170px, #0f0, transparent);
+  animation: ledBlink2 2.4s steps(1) infinite;
+  pointer-events: none;
+}
+
+@keyframes ledBlink2 {
+  0%   { opacity: 0.4; }
+  15%  { opacity: 1; }
+  30%  { opacity: 1; }
+  35%  { opacity: 0.3; }
+  50%  { opacity: 1; }
+  70%  { opacity: 1; }
+  75%  { opacity: 0.5; }
+  90%  { opacity: 1; }
 }
 
 /* ================================================
@@ -553,51 +680,134 @@
 }
 
 /* ================================================
-   8. GAME ROOM - Neon arcade, dark BUT colorful
-   Purple-black with vivid neon highlights
+   8. GAME ROOM - 90s PC den with beige CRT + tower
+   Teal wallpaper, classic 486-era setup
    ================================================ */
 .room-game-room .room-bg {
   background:
-    /* Neon glow strips */
-    linear-gradient(to right, transparent, rgba(255,0,100,0.15) 10%, rgba(255,0,100,0.15) 90%, transparent) no-repeat 0 8px / 100% 4px,
-    linear-gradient(to right, transparent, rgba(0,200,255,0.1) 15%, rgba(0,200,255,0.1) 85%, transparent) no-repeat 0 380px / 100% 3px,
+    /* Screen glow on wall */
+    radial-gradient(ellipse 300px 180px at 580px 200px, rgba(100,180,220,0.08), transparent),
 
-    /* Arcade cabinet 1 (far left) */
-    linear-gradient(#3a3a4a, #2e2e3e) no-repeat 20px 100px / 80px 280px,
-    linear-gradient(#1a1a2a, #141420) no-repeat 28px 110px / 64px 80px,
-    radial-gradient(ellipse 55px 65px at 60px 150px, rgba(0,180,255,0.2), transparent),
-    /* Cabinet 1 controls */
-    linear-gradient(#4a4a5a, #4a4a5a) no-repeat 35px 200px / 50px 20px,
+    /* === MONITOR STAND (below CRT) === */
 
-    /* Arcade cabinet 2 */
-    linear-gradient(#3e3e4e, #303040) no-repeat 120px 80px / 80px 300px,
-    linear-gradient(#1a1a2a, #141420) no-repeat 128px 90px / 64px 80px,
-    radial-gradient(ellipse 55px 65px at 160px 130px, rgba(220,60,255,0.15), transparent),
+    /* Neck / tilt stem */
+    linear-gradient(to right, #c8bc98, #d4c8a4 30%, #d0c4a0 70%, #c4b894) no-repeat 585px 392px / 70px 18px,
+    /* Angled base plate - wide foot */
+    linear-gradient(to bottom, #ccc09c, #c0b490) no-repeat 545px 410px / 150px 10px,
+    /* Base plate top bevel */
+    linear-gradient(#d8ccaa, #d0c4a0) no-repeat 550px 408px / 140px 3px,
+    /* Base plate bottom shadow */
+    linear-gradient(rgba(0,0,0,0.2), transparent) no-repeat 548px 420px / 146px 6px,
+    /* Angled sides (left taper) */
+    linear-gradient(250deg, #ccc09c 0%, #ccc09c 50%, transparent 50%) no-repeat 545px 398px / 44px 14px,
+    /* Angled sides (right taper) */
+    linear-gradient(290deg, #c8bc98 0%, #c8bc98 50%, transparent 50%) no-repeat 651px 398px / 44px 14px,
 
-    /* Arcade cabinet 3 (far right) */
-    linear-gradient(#3a3a4a, #2e2e3e) no-repeat 1060px 100px / 80px 280px,
-    linear-gradient(#1a1a2a, #141420) no-repeat 1068px 110px / 64px 80px,
-    radial-gradient(ellipse 55px 65px at 1100px 150px, rgba(255,120,0,0.15), transparent),
+    /* === CPU TOWER (far right) === */
 
-    /* Arcade cabinet 4 */
-    linear-gradient(#3e3e4e, #303040) no-repeat 1160px 80px / 80px 300px,
-    linear-gradient(#1a1a2a, #141420) no-repeat 1168px 90px / 64px 80px,
-    radial-gradient(ellipse 55px 65px at 1200px 130px, rgba(0,255,120,0.15), transparent),
+    /* Tower body */
+    linear-gradient(to right, #dcd0b0, #d8ccaa 20%, #d0c4a0 80%, #c8bc98) no-repeat 1100px 50px / 130px 380px,
+    /* Tower top highlight */
+    linear-gradient(#e4d8b8, #dcd0b0) no-repeat 1100px 46px / 130px 6px,
 
-    /* Neon sign glow (center top) */
-    radial-gradient(ellipse 200px 50px at 50% 20px, rgba(255,0,100,0.12), transparent),
+    /* 5.25" drive bay */
+    linear-gradient(#c4b890, #bcb088) no-repeat 1110px 72px / 110px 28px,
+    linear-gradient(#aaa07a, #aaa07a) no-repeat 1112px 74px / 106px 1px,
+    linear-gradient(#aaa07a, #aaa07a) no-repeat 1112px 98px / 106px 1px,
+    linear-gradient(#b4a880, #b4a880) no-repeat 1200px 82px / 12px 10px,
 
-    /* Carpet pattern (classic arcade carpet) */
+    /* 3.5" floppy drive */
+    linear-gradient(#c8bc94, #c0b48c) no-repeat 1110px 114px / 110px 20px,
+    linear-gradient(#222228, #222228) no-repeat 1115px 118px / 72px 12px,
+    linear-gradient(#b0a47c, #b0a47c) no-repeat 1200px 120px / 12px 10px,
+
+    /* CD-ROM drive */
+    linear-gradient(#c8bc94, #c0b48c) no-repeat 1110px 148px / 110px 22px,
+    linear-gradient(#aaa07a, #aaa07a) no-repeat 1112px 158px / 106px 1px,
+    linear-gradient(#9a8e6c, #9a8e6c) no-repeat 1115px 164px / 90px 1px,
+    linear-gradient(#b4a880, #b4a880) no-repeat 1200px 152px / 12px 10px,
+
+    /* Front label (Intel Inside / 486 vibe) */
+    linear-gradient(#c0b490, #b8ac88) no-repeat 1135px 200px / 50px 18px,
+
+    /* Power button + LED */
+    radial-gradient(circle 10px at 1165px 390px, #c8bc94, #bab088 9px, transparent 10px),
+    radial-gradient(circle 3px at 1165px 370px, #0c0, transparent),
+    /* Reset button */
+    radial-gradient(circle 5px at 1165px 348px, #c0b48c, #b8ac84 4px, transparent 5px),
+
+    /* Ventilation grille */
+    repeating-linear-gradient(to bottom, #ccc09c 0px, #ccc09c 3px, #aaa07a 3px, #aaa07a 5px) no-repeat 1110px 260px / 110px 60px,
+
+    /* === DESK === */
+    linear-gradient(to bottom, #8a7050, #806848) no-repeat 0 430px / 100% 8px,
+    linear-gradient(to bottom, #7a6040, #6a5030) no-repeat 0 438px / 100% 102px,
+    linear-gradient(to bottom, rgba(0,0,0,0.15), transparent) no-repeat 0 438px / 100% 6px,
+
+    /* === 90s TEAL WALLPAPER === */
+    /* Diamond lattice */
     repeating-linear-gradient(45deg,
-      #1e1a28 0px, #1e1a28 8px,
-      #221e30 8px, #221e30 16px
-    ) no-repeat 0 392px / 100% 148px,
+      transparent 0px, transparent 22px,
+      rgba(255,255,255,0.05) 22px, rgba(255,255,255,0.05) 24px
+    ),
+    repeating-linear-gradient(-45deg,
+      transparent 0px, transparent 22px,
+      rgba(255,255,255,0.05) 22px, rgba(255,255,255,0.05) 24px
+    ),
+    /* Subtle horizontal texture */
+    repeating-linear-gradient(to bottom,
+      transparent 0px, transparent 3px,
+      rgba(0,0,0,0.04) 3px, rgba(0,0,0,0.04) 4px
+    ),
+    /* Teal base wall */
+    linear-gradient(to bottom, #3a8a82 0%, #2e7a72 50%, #287068 60%);
+}
 
-    /* Floor line */
-    linear-gradient(#3a3848, #3a3848) no-repeat 0 390px / 100% 3px,
-
-    /* Room - deep purple but VISIBLE */
-    linear-gradient(to bottom, #1e1a2e, #2a2440 60%, #1e1a28 62%);
+/* CRT bezel on game room images - beige 486-era monitor frame */
+/* #room and #objects are siblings, so use ~ combinator */
+#room.room-game-room ~ #objects .obj-monitor-screen,
+#room.room-game-room ~ #objects .obj-wall-poster {
+  border: 14px solid #d4c8a4;
+  border-bottom-width: 38px;
+  border-radius: 6px;
+  box-shadow:
+    inset 0 0 20px rgba(0, 0, 0, 0.4),
+    0 4px 0 #b8ac88,
+    0 8px 0 #a89c78,
+    0 12px 20px rgba(0, 0, 0, 0.3);
+  background: #0a0a12;
+  padding: 3px;
+}
+#room.room-game-room ~ #objects .obj-monitor-screen img,
+#room.room-game-room ~ #objects .obj-wall-poster img {
+  border: 2px solid #0a0a12;
+  border-radius: 2px;
+}
+/* Power LED on the thick bottom bezel */
+#room.room-game-room ~ #objects .obj-monitor-screen::after,
+#room.room-game-room ~ #objects .obj-wall-poster::after {
+  content: '';
+  position: absolute;
+  bottom: -26px;
+  right: 20px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0c0;
+  box-shadow: 0 0 6px #0f0, 0 0 12px rgba(0, 255, 0, 0.3);
+}
+/* Brand label on bottom bezel */
+#room.room-game-room ~ #objects .obj-monitor-screen::before,
+#room.room-game-room ~ #objects .obj-wall-poster::before {
+  content: '';
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 10px;
+  background: linear-gradient(#b8ac88, #b0a480);
+  border-radius: 2px;
 }
 
 /* ================================================

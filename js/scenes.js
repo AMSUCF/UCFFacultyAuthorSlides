@@ -66,8 +66,8 @@ const SCENES = [
 
   { // 4 - LibGen
     id: 4,
-    room: 'The Server Room',
-    template: 'server-room',
+    room: 'The Data Center',
+    template: 'data-center',
     transition: 'walk-right',
     spriteX: 620,
     objects: [{
@@ -81,8 +81,8 @@ const SCENES = [
 
   { // 5 - Books3
     id: 5,
-    room: 'The Server Room',
-    template: 'server-room',
+    room: 'The Data Center',
+    template: 'data-center',
     transition: 'iris',
     spriteX: 620,
     objects: [{
@@ -299,7 +299,7 @@ const SCENES = [
   { // 19 - Flash preservation
     id: 19,
     room: 'The Archive Terminal',
-    template: 'server-room',
+    template: 'data-center',
     transition: 'wipe-right',
     spriteX: 620,
     objects: [{
