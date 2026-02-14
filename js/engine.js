@@ -61,24 +61,26 @@ const Engine = (() => {
       _elements.progressBar.style.width = pct + '%';
       _elements.preloaderStatus.textContent = `Loading assets... ${loaded}/${total}`;
     }).then(() => {
-      _elements.preloaderStatus.textContent = 'Press any key to begin';
+      _elements.preloaderStatus.textContent = 'Press any key or tap to begin';
       waitForFirstKey();
     });
   }
 
   function waitForFirstKey() {
-    function onKey(e) {
-      document.removeEventListener('keydown', onKey);
+    function start() {
+      document.removeEventListener('keydown', start);
+      document.removeEventListener('click', start);
       _elements.preloader.classList.add('hidden');
       goToScene(0);
       // Bind navigation after first scene
-      setTimeout(() => bindKeys(), 100);
+      setTimeout(() => bindInput(), 100);
     }
-    document.addEventListener('keydown', onKey);
+    document.addEventListener('keydown', start);
+    document.addEventListener('click', start);
   }
 
-  // --- Keyboard Navigation ---
-  function bindKeys() {
+  // --- Keyboard + Tap Navigation ---
+  function bindInput() {
     document.addEventListener('keydown', (e) => {
       if (Transitions.isLocked()) return;
 
@@ -119,6 +121,21 @@ const Engine = (() => {
           goToScene(SCENES.length - 1);
           break;
       }
+    });
+
+    // Tap / click on viewport advances scenes
+    _elements.viewport.addEventListener('click', (e) => {
+      if (Transitions.isLocked()) return;
+
+      // Don't intercept clicks on links or buttons
+      if (e.target.closest('a, button')) return;
+
+      if (_currentScene === 0) {
+        goToScene(1);
+        return;
+      }
+
+      nextScene();
     });
   }
 
