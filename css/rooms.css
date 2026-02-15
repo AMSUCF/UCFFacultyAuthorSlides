@@ -543,53 +543,168 @@
 }
 
 /* ================================================
-   6. HALLWAY - Perspective corridor with doors
-   Warm tan walls, clearly visible carpet and doors
+   6. HALLWAY - Portrait hall with adventure game heroes
+   Warm tan walls, gold frames, red carpet
    ================================================ */
 .room-hallway .room-bg {
   background:
-    /* Ceiling light at end */
-    radial-gradient(circle 40px at 50% 8%, rgba(255,230,160,0.3), transparent),
+    /* Gallery picture lights (warm glow above each portrait) */
+    radial-gradient(ellipse 80px 50px at 125px 30px, rgba(255,220,140,0.15), transparent),
+    radial-gradient(ellipse 70px 45px at 440px 45px, rgba(255,220,140,0.12), transparent),
+    radial-gradient(ellipse 70px 45px at 840px 45px, rgba(255,220,140,0.12), transparent),
+    radial-gradient(ellipse 80px 50px at 1155px 30px, rgba(255,220,140,0.15), transparent),
 
-    /* Left wall perspective shading */
-    linear-gradient(to right, #8a7e6e, transparent 80%) no-repeat 0 0 / 35% 62%,
-    /* Right wall perspective shading */
-    linear-gradient(to left, #8a7e6e, transparent 80%) no-repeat 65% 0 / 35% 62%,
+    /* ---- PORTRAIT 1: Sir Graham (King's Quest) ---- */
+    /* Brass nameplate (above frame, outside frame area) */
+    linear-gradient(#c8a848, #b89838) no-repeat 80px 242px / 90px 14px,
+    /* Face */
+    linear-gradient(#d4a878, #c89868) no-repeat 100px 102px / 34px 40px,
+    /* Red adventurer's cap */
+    linear-gradient(#c83030, #b02828) no-repeat 96px 82px / 48px 22px,
+    linear-gradient(#d03838, #c83030) no-repeat 108px 72px / 24px 14px,
+    /* Feather on cap */
+    linear-gradient(#e8d840, #d8c830) no-repeat 138px 70px / 4px 20px,
+    /* Hair (sides) */
+    linear-gradient(#8a6830, #7a5820) no-repeat 96px 100px / 8px 28px,
+    linear-gradient(#8a6830, #7a5820) no-repeat 130px 100px / 8px 28px,
+    /* Blue tunic */
+    linear-gradient(#3060b0, #2850a0) no-repeat 96px 144px / 42px 50px,
+    /* Canvas (covers frame interior) */
+    linear-gradient(#1e3828, #162e20) no-repeat 62px 52px / 126px 171px,
+    /* Frame inner (border shows around canvas) */
+    linear-gradient(#d4b050, #c8a040) no-repeat 54px 44px / 142px 187px,
+    /* Frame outer (border shows around inner) */
+    linear-gradient(#c8a040, #b89030) no-repeat 50px 40px / 150px 195px,
 
-    /* Left door 1 */
-    linear-gradient(#5a4830, #4a3820) no-repeat 10% 15% / 10% 45%,
-    linear-gradient(#8a7a58, #8a7a58) no-repeat 9.5% 14% / 11% 2%,
-    /* Left door 2 */
-    linear-gradient(#5a4830, #4a3820) no-repeat 22% 18% / 8% 40%,
+    /* ---- PORTRAIT 2: Indiana Jones (Fate of Atlantis) ---- */
+    /* Nameplate */
+    linear-gradient(#c8a848, #b89838) no-repeat 395px 242px / 90px 14px,
+    /* Face */
+    linear-gradient(#d4a878, #c89868) no-repeat 418px 112px / 30px 38px,
+    /* Eyes */
+    linear-gradient(#1a1a2a, #1a1a2a) no-repeat 422px 120px / 6px 5px,
+    linear-gradient(#1a1a2a, #1a1a2a) no-repeat 438px 120px / 6px 5px,
+    /* Nose */
+    linear-gradient(#c08858, #c08858) no-repeat 430px 128px / 6px 8px,
+    /* Chin / jaw shadow */
+    linear-gradient(#b88050, #b88050) no-repeat 420px 144px / 26px 6px,
+    /* 5 o'clock shadow */
+    linear-gradient(rgba(80,60,40,0.3), rgba(80,60,40,0.3)) no-repeat 420px 138px / 26px 12px,
+    /* Fedora - wide brim */
+    linear-gradient(#5a3a1a, #4a2e12) no-repeat 404px 90px / 58px 10px,
+    /* Fedora - crown */
+    linear-gradient(#6a4420, #5a3818) no-repeat 414px 76px / 38px 16px,
+    /* Fedora - band */
+    linear-gradient(#3a2810, #3a2810) no-repeat 414px 88px / 38px 4px,
+    /* Fedora - hat shadow on face */
+    linear-gradient(rgba(40,20,0,0.35), transparent) no-repeat 418px 100px / 30px 16px,
+    /* Brown hair (under hat, sides) */
+    linear-gradient(#5a3818, #4a2e10) no-repeat 414px 100px / 8px 20px,
+    linear-gradient(#5a3818, #4a2e10) no-repeat 444px 100px / 8px 20px,
+    /* Brown leather jacket */
+    linear-gradient(#6a4420, #5a3818) no-repeat 410px 152px / 46px 46px,
+    /* Jacket collar */
+    linear-gradient(#7a5430, #6a4420) no-repeat 412px 150px / 42px 8px,
+    /* Jacket lapels */
+    linear-gradient(#5a3818, #4a2e10) no-repeat 418px 156px / 10px 20px,
+    linear-gradient(#5a3818, #4a2e10) no-repeat 438px 156px / 10px 20px,
+    /* Khaki shirt showing at collar */
+    linear-gradient(#c8b888, #b8a878) no-repeat 428px 154px / 10px 14px,
+    /* Whip coil (on right shoulder) */
+    linear-gradient(#3a2810, #3a2810) no-repeat 450px 158px / 6px 4px,
+    linear-gradient(#3a2810, #3a2810) no-repeat 448px 162px / 8px 3px,
+    linear-gradient(#3a2810, #3a2810) no-repeat 450px 165px / 6px 3px,
+    /* Canvas - warm brown (adventure/temple tone) */
+    linear-gradient(#1e1a14, #181410) no-repeat 387px 72px / 106px 149px,
+    /* Frame inner */
+    linear-gradient(#d4b050, #c8a040) no-repeat 379px 64px / 122px 167px,
+    /* Frame outer */
+    linear-gradient(#c8a040, #b89030) no-repeat 375px 60px / 130px 175px,
 
-    /* Right door 1 */
-    linear-gradient(#5a4830, #4a3820) no-repeat 80% 15% / 10% 45%,
-    linear-gradient(#8a7a58, #8a7a58) no-repeat 79.5% 14% / 11% 2%,
-    /* Right door 2 */
-    linear-gradient(#5a4830, #4a3820) no-repeat 70% 18% / 8% 40%,
+    /* ---- PORTRAIT 3: Guybrush Threepwood (Monkey Island) ---- */
+    /* Nameplate */
+    linear-gradient(#c8a848, #b89838) no-repeat 800px 242px / 80px 14px,
+    /* Face */
+    linear-gradient(#d8b488, #cca878) no-repeat 818px 116px / 28px 34px,
+    /* Eyes */
+    linear-gradient(#1a1a2a, #1a1a2a) no-repeat 822px 124px / 6px 5px,
+    linear-gradient(#1a1a2a, #1a1a2a) no-repeat 836px 124px / 6px 5px,
+    /* Nose */
+    linear-gradient(#c8a070, #c8a070) no-repeat 830px 132px / 5px 6px,
+    /* Grin */
+    linear-gradient(#a07050, #a07050) no-repeat 824px 142px / 16px 3px,
+    /* Blonde hair top */
+    linear-gradient(#d4b040, #c8a430) no-repeat 814px 102px / 38px 18px,
+    /* Hair fringe */
+    linear-gradient(#dab848, #d4b040) no-repeat 810px 108px / 10px 14px,
+    /* Ponytail - flows from behind head down right side */
+    linear-gradient(#d4b040, #c8a430) no-repeat 850px 108px / 10px 18px,
+    linear-gradient(#c8a430, #c8a430) no-repeat 852px 126px / 8px 20px,
+    linear-gradient(#c8a430, #bc9820) no-repeat 854px 146px / 7px 22px,
+    linear-gradient(#bc9820, #b08c18) no-repeat 855px 168px / 6px 16px,
+    /* Hair tie */
+    linear-gradient(#8a2020, #8a2020) no-repeat 853px 124px / 8px 4px,
+    /* Goatee */
+    linear-gradient(#c0a030, #b89428) no-repeat 828px 150px / 10px 8px,
+    /* Blue pirate coat */
+    linear-gradient(#2a4a8a, #203e7a) no-repeat 810px 154px / 44px 44px,
+    /* Coat collar / white shirt */
+    linear-gradient(#e0d8c0, #d4ccb4) no-repeat 822px 154px / 20px 10px,
+    /* Canvas (covers frame interior) */
+    linear-gradient(#1a1e2e, #141828) no-repeat 787px 72px / 106px 149px,
+    /* Frame inner */
+    linear-gradient(#d4b050, #c8a040) no-repeat 779px 64px / 122px 167px,
+    /* Frame outer */
+    linear-gradient(#c8a040, #b89030) no-repeat 775px 60px / 130px 175px,
 
-    /* Far doorway (lit from beyond) */
-    radial-gradient(ellipse 60px 80px at 50% 35%, rgba(255,210,120,0.15), transparent),
-    linear-gradient(#4a3828, #2a1e10) no-repeat 43% 12% / 14% 50%,
-    /* Far door frame */
-    linear-gradient(#8a7a58, #8a7a58) no-repeat 42% 11% / 1% 51%,
-    linear-gradient(#8a7a58, #8a7a58) no-repeat 57% 11% / 1% 51%,
-    linear-gradient(#8a7a58, #8a7a58) no-repeat 42% 10% / 16% 2%,
-
-    /* Wall sconces */
-    radial-gradient(circle 25px at 30% 25%, rgba(255,210,120,0.15), transparent),
-    radial-gradient(circle 25px at 70% 25%, rgba(255,210,120,0.15), transparent),
-
-    /* Runner carpet - rich red */
-    linear-gradient(#8a2828 0px, #8a2828 4px, #6a1818 4px, #6a1818 8px) no-repeat 35% 62% / 30% 38%,
-    /* Carpet border - gold */
-    linear-gradient(#bb8830, #bb8830) no-repeat 34% 62% / 1% 38%,
-    linear-gradient(#bb8830, #bb8830) no-repeat 65% 62% / 1% 38%,
+    /* ---- PORTRAIT 4: Leisure Suit Larry ---- */
+    /* Nameplate */
+    linear-gradient(#c8a848, #b89838) no-repeat 1110px 242px / 90px 14px,
+    /* Face */
+    linear-gradient(#c89868, #bc8c58) no-repeat 1130px 104px / 34px 40px,
+    /* Eyes */
+    linear-gradient(#1a1a2a, #1a1a2a) no-repeat 1134px 114px / 6px 5px,
+    linear-gradient(#1a1a2a, #1a1a2a) no-repeat 1152px 114px / 6px 5px,
+    /* Big nose */
+    linear-gradient(#b88050, #b88050) no-repeat 1142px 120px / 8px 10px,
+    /* Smirk */
+    linear-gradient(#a06848, #a06848) no-repeat 1136px 136px / 20px 3px,
+    /* Bald dome (skin colored) */
+    linear-gradient(#c89868, #bc8c58) no-repeat 1130px 88px / 34px 20px,
+    /* Dark hair on sides only */
+    linear-gradient(#1a1a1a, #101010) no-repeat 1122px 104px / 12px 28px,
+    linear-gradient(#1a1a1a, #101010) no-repeat 1160px 104px / 12px 28px,
+    /* Mustache */
+    linear-gradient(#1a1a1a, #101010) no-repeat 1136px 132px / 20px 4px,
+    /* White leisure suit jacket */
+    linear-gradient(#e8e8e0, #dcdcd4) no-repeat 1120px 146px / 54px 52px,
+    /* V-neck opening showing chest */
+    linear-gradient(#b07848, #a06838) no-repeat 1140px 146px / 14px 20px,
+    /* Left lapel */
+    linear-gradient(#d8d8d0, #ccccbe) no-repeat 1124px 146px / 16px 34px,
+    /* Right lapel */
+    linear-gradient(#d8d8d0, #ccccbe) no-repeat 1154px 146px / 16px 34px,
+    /* Gold chain on chest */
+    linear-gradient(#e8c030, #d4a820) no-repeat 1142px 150px / 10px 3px,
+    linear-gradient(#e8c030, #d4a820) no-repeat 1140px 153px / 14px 3px,
+    /* Pocket square (left breast) */
+    linear-gradient(#e84040, #d03030) no-repeat 1126px 150px / 8px 6px,
+    /* Canvas (covers frame interior) */
+    linear-gradient(#2e1a28, #261420) no-repeat 1092px 52px / 126px 171px,
+    /* Frame inner */
+    linear-gradient(#d4b050, #c8a040) no-repeat 1084px 44px / 142px 187px,
+    /* Frame outer */
+    linear-gradient(#c8a040, #b89030) no-repeat 1080px 40px / 150px 195px,
 
     /* Baseboard */
     linear-gradient(#7a6e50, #7a6e50) no-repeat 0 60% / 100% 4px,
 
-    /* Wall + floor - warm tan walls */
+    /* Wood floor */
+    repeating-linear-gradient(to right,
+      #4a3828 0px, #4a3828 80px, #3e2e1c 80px, #3e2e1c 82px
+    ) no-repeat 0 62% / 100% 38%,
+
+    /* Wall - warm tan */
     linear-gradient(to bottom, #7a6e5c, #6a5e4c 62%, #3a3020 64%);
 }
 
@@ -688,56 +803,93 @@
     /* Screen glow on wall */
     radial-gradient(ellipse 300px 180px at 580px 200px, rgba(100,180,220,0.08), transparent),
 
-    /* === MONITOR STAND (below CRT) === */
-
-    /* Neck / tilt stem */
-    linear-gradient(to right, #c8bc98, #d4c8a4 30%, #d0c4a0 70%, #c4b894) no-repeat 585px 392px / 70px 18px,
-    /* Angled base plate - wide foot */
-    linear-gradient(to bottom, #ccc09c, #c0b490) no-repeat 545px 410px / 150px 10px,
-    /* Base plate top bevel */
-    linear-gradient(#d8ccaa, #d0c4a0) no-repeat 550px 408px / 140px 3px,
-    /* Base plate bottom shadow */
-    linear-gradient(rgba(0,0,0,0.2), transparent) no-repeat 548px 420px / 146px 6px,
-    /* Angled sides (left taper) */
-    linear-gradient(250deg, #ccc09c 0%, #ccc09c 50%, transparent 50%) no-repeat 545px 398px / 44px 14px,
-    /* Angled sides (right taper) */
-    linear-gradient(290deg, #c8bc98 0%, #c8bc98 50%, transparent 50%) no-repeat 651px 398px / 44px 14px,
-
     /* === CPU TOWER (far right) === */
+    /* Details listed FIRST so they paint ON TOP of the tower body */
 
-    /* Tower body */
-    linear-gradient(to right, #dcd0b0, #d8ccaa 20%, #d0c4a0 80%, #c8bc98) no-repeat 1100px 50px / 130px 380px,
-    /* Tower top highlight */
-    linear-gradient(#e4d8b8, #dcd0b0) no-repeat 1100px 46px / 130px 6px,
+    /* Tower feet */
+    linear-gradient(#8a8060, #8a8060) no-repeat 1106px 428px / 20px 4px,
+    linear-gradient(#8a8060, #8a8060) no-repeat 1204px 428px / 20px 4px,
 
-    /* 5.25" drive bay */
-    linear-gradient(#c4b890, #bcb088) no-repeat 1110px 72px / 110px 28px,
-    linear-gradient(#aaa07a, #aaa07a) no-repeat 1112px 74px / 106px 1px,
-    linear-gradient(#aaa07a, #aaa07a) no-repeat 1112px 98px / 106px 1px,
-    linear-gradient(#b4a880, #b4a880) no-repeat 1200px 82px / 12px 10px,
+    /* Turbo button */
+    linear-gradient(#aaa078, #aaa078) no-repeat 1154px 408px / 22px 1px,
+    linear-gradient(#c0b48c, #b8ac84) no-repeat 1152px 406px / 26px 10px,
 
-    /* 3.5" floppy drive */
-    linear-gradient(#c8bc94, #c0b48c) no-repeat 1110px 114px / 110px 20px,
-    linear-gradient(#222228, #222228) no-repeat 1115px 118px / 72px 12px,
-    linear-gradient(#b0a47c, #b0a47c) no-repeat 1200px 120px / 12px 10px,
+    /* Reset button - small recessed */
+    radial-gradient(circle 5px at 1165px 396px, #b8ac84, #a89c78 4px, transparent 5px),
 
-    /* CD-ROM drive */
-    linear-gradient(#c8bc94, #c0b48c) no-repeat 1110px 148px / 110px 22px,
-    linear-gradient(#aaa07a, #aaa07a) no-repeat 1112px 158px / 106px 1px,
-    linear-gradient(#9a8e6c, #9a8e6c) no-repeat 1115px 164px / 90px 1px,
-    linear-gradient(#b4a880, #b4a880) no-repeat 1200px 152px / 12px 10px,
-
-    /* Front label (Intel Inside / 486 vibe) */
-    linear-gradient(#c0b490, #b8ac88) no-repeat 1135px 200px / 50px 18px,
-
-    /* Power button + LED */
-    radial-gradient(circle 10px at 1165px 390px, #c8bc94, #bab088 9px, transparent 10px),
-    radial-gradient(circle 3px at 1165px 370px, #0c0, transparent),
-    /* Reset button */
-    radial-gradient(circle 5px at 1165px 348px, #c0b48c, #b8ac84 4px, transparent 5px),
+    /* Power symbol on button */
+    radial-gradient(circle 4px at 1165px 370px, transparent 3px, #8a7a58 3px, #8a7a58 4px, transparent 4px),
+    linear-gradient(#c0b490, #c0b490) no-repeat 1164px 364px / 2px 6px,
+    /* Power button - large round */
+    radial-gradient(circle 12px at 1165px 370px, #c0b490, #b8ac84 10px, #a89c78 11px, transparent 12px),
+    /* Power LED - green */
+    radial-gradient(circle 3px at 1130px 370px, #0a0, #080 2px, transparent 3px),
+    /* HDD LED - amber */
+    radial-gradient(circle 3px at 1130px 382px, #a80, #860 2px, transparent 3px),
+    /* LED labels */
+    linear-gradient(#b8ac88, #b8ac88) no-repeat 1136px 368px / 16px 4px,
+    linear-gradient(#b8ac88, #b8ac88) no-repeat 1136px 380px / 16px 4px,
 
     /* Ventilation grille */
-    repeating-linear-gradient(to bottom, #ccc09c 0px, #ccc09c 3px, #aaa07a 3px, #aaa07a 5px) no-repeat 1110px 260px / 110px 60px,
+    repeating-linear-gradient(to bottom, #ccc09c 0px, #ccc09c 3px, #aaa07a 3px, #aaa07a 5px) no-repeat 1110px 260px / 110px 70px,
+    /* Grille border */
+    linear-gradient(#b8ac88, #b8ac88) no-repeat 1110px 258px / 110px 2px,
+    linear-gradient(#b8ac88, #b8ac88) no-repeat 1110px 330px / 110px 2px,
+
+    /* Turbo LED label area */
+    linear-gradient(#c8bc98, #c8bc98) no-repeat 1120px 232px / 30px 8px,
+
+    /* "Intel" text area (white stripe on blue) */
+    linear-gradient(#e0e0e0, #e0e0e0) no-repeat 1124px 204px / 24px 4px,
+    /* Front label (Intel Inside / 486 vibe) */
+    linear-gradient(#4868a8, #3858a0) no-repeat 1120px 200px / 44px 16px,
+    /* "486" text hint */
+    linear-gradient(#8a7a58, #8a7a58) no-repeat 1174px 204px / 28px 4px,
+    /* Second sticker - "486" */
+    linear-gradient(#c0b490, #b8ac88) no-repeat 1170px 200px / 36px 16px,
+
+    /* Divider line below drives */
+    linear-gradient(#b8ac88, #b8ac88) no-repeat 1110px 186px / 110px 2px,
+
+    /* CD LED */
+    radial-gradient(circle 2px at 1116px 174px, #880, transparent),
+    /* CD tray handle groove */
+    linear-gradient(#9a8e6c, #9a8e6c) no-repeat 1130px 168px / 60px 2px,
+    /* CD tray seam */
+    linear-gradient(#aaa07a, #aaa07a) no-repeat 1112px 162px / 106px 1px,
+    /* Eject button */
+    linear-gradient(#b4a880, #b4a880) no-repeat 1198px 154px / 14px 10px,
+    /* CD-ROM drive */
+    linear-gradient(#c8bc94, #c0b48c) no-repeat 1110px 150px / 110px 26px,
+
+    /* Floppy LED */
+    radial-gradient(circle 2px at 1116px 136px, #880, transparent),
+    /* Floppy slot inner shadow */
+    linear-gradient(#111118, #222228) no-repeat 1115px 118px / 80px 4px,
+    /* Floppy slot */
+    linear-gradient(#222228, #222228) no-repeat 1115px 118px / 80px 14px,
+    /* Eject button */
+    linear-gradient(#b0a47c, #b0a47c) no-repeat 1198px 122px / 14px 10px,
+    /* 3.5" floppy drive */
+    linear-gradient(#c8bc94, #c0b48c) no-repeat 1110px 114px / 110px 24px,
+
+    /* Drive activity LED */
+    radial-gradient(circle 2px at 1116px 84px, #880, transparent),
+    /* 5.25" drive bay lines */
+    linear-gradient(#aaa07a, #aaa07a) no-repeat 1112px 74px / 106px 1px,
+    linear-gradient(#aaa07a, #aaa07a) no-repeat 1112px 100px / 106px 1px,
+    /* Eject button */
+    linear-gradient(#b8ac84, #b8ac84) no-repeat 1198px 82px / 14px 10px,
+    /* 5.25" drive bay */
+    linear-gradient(#c4b890, #bcb088) no-repeat 1110px 72px / 110px 30px,
+
+    /* Tower side edge shadows */
+    linear-gradient(#c0b490, #c0b490) no-repeat 1100px 50px / 3px 380px,
+    linear-gradient(#c4b894, #c4b894) no-repeat 1227px 50px / 3px 380px,
+    /* Tower top highlight */
+    linear-gradient(#e4d8b8, #dcd0b0) no-repeat 1100px 46px / 130px 6px,
+    /* Tower body (LAST so details paint on top) */
+    linear-gradient(to right, #dcd0b0, #d8ccaa 20%, #d0c4a0 80%, #c8bc98) no-repeat 1100px 50px / 130px 380px,
 
     /* === DESK === */
     linear-gradient(to bottom, #8a7050, #806848) no-repeat 0 430px / 100% 8px,
@@ -763,51 +915,159 @@
     linear-gradient(to bottom, #3a8a82 0%, #2e7a72 50%, #287068 60%);
 }
 
-/* CRT bezel on game room images - beige 486-era monitor frame */
+/* CRT bezel on game room images - clean beige rectangle */
 /* #room and #objects are siblings, so use ~ combinator */
 #room.room-game-room ~ #objects .obj-monitor-screen,
 #room.room-game-room ~ #objects .obj-wall-poster {
-  border: 14px solid #d4c8a4;
-  border-bottom-width: 38px;
-  border-radius: 6px;
+  border: 16px solid #d4c8a4;
+  border-radius: 4px;
   box-shadow:
-    inset 0 0 20px rgba(0, 0, 0, 0.4),
-    0 4px 0 #b8ac88,
-    0 8px 0 #a89c78,
-    0 12px 20px rgba(0, 0, 0, 0.3);
-  background: #0a0a12;
-  padding: 3px;
+    inset 0 0 12px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.4);
+  background: #0e0e18;
+  padding: 2px;
+  overflow: visible;
 }
-#room.room-game-room ~ #objects .obj-monitor-screen img,
-#room.room-game-room ~ #objects .obj-wall-poster img {
-  border: 2px solid #0a0a12;
-  border-radius: 2px;
-}
-/* Power LED on the thick bottom bezel */
+
+/* Monitor stand - loads with the bezel */
 #room.room-game-room ~ #objects .obj-monitor-screen::after,
 #room.room-game-room ~ #objects .obj-wall-poster::after {
   content: '';
   position: absolute;
-  bottom: -26px;
-  right: 20px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #0c0;
-  box-shadow: 0 0 6px #0f0, 0 0 12px rgba(0, 255, 0, 0.3);
-}
-/* Brand label on bottom bezel */
-#room.room-game-room ~ #objects .obj-monitor-screen::before,
-#room.room-game-room ~ #objects .obj-wall-poster::before {
-  content: '';
-  position: absolute;
-  bottom: -24px;
+  top: calc(100% + 16px);
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 10px;
-  background: linear-gradient(#b8ac88, #b0a480);
+  width: 60px;
+  height: 58px;
+  background: linear-gradient(to right, #c8bc98, #d4c8a4 30%, #d0c4a0 70%, #c4b894);
+  box-shadow:
+    /* Wide base at bottom */
+    -45px 52px 0 0 #ccc09c,
+    45px 52px 0 0 #ccc09c,
+    -30px 52px 0 0 #d0c4a0,
+    30px 52px 0 0 #d0c4a0,
+    -15px 52px 0 0 #d4c8a4,
+    15px 52px 0 0 #d4c8a4,
+    0 52px 0 0 #d4c8a4,
+    0 56px 4px rgba(0,0,0,0.12);
+}
+
+/* Label on screen instead of below stand */
+#room.room-game-room ~ #objects .obj-monitor-screen .object-label,
+#room.room-game-room ~ #objects .obj-wall-poster .object-label {
+  bottom: auto;
+  top: 8px;
+}
+
+/* ================================================
+   8b. ARCADE - Modern gaming setup
+   Purple walls, RGB lighting, sleek black monitor + small PC
+   ================================================ */
+.room-arcade .room-bg {
+  background:
+    /* RGB strip glow on ceiling */
+    linear-gradient(to right,
+      rgba(255,0,80,0.12), rgba(120,0,255,0.12) 25%,
+      rgba(0,120,255,0.12) 50%, rgba(0,255,180,0.10) 75%,
+      rgba(255,0,120,0.10)
+    ) no-repeat 0 0 / 100% 8px,
+
+    /* Monitor glow on wall */
+    radial-gradient(ellipse 350px 200px at 540px 180px, rgba(120,80,220,0.12), transparent),
+
+    /* === SMALL MODERN PC (right side) === */
+
+    /* RGB fan glow through tempered glass */
+    radial-gradient(circle 18px at 1120px 280px, rgba(120,0,255,0.25), transparent),
+    radial-gradient(circle 14px at 1120px 340px, rgba(0,200,255,0.20), transparent),
+    /* Tempered glass panel - dark with subtle reflection */
+    linear-gradient(160deg, rgba(60,40,80,0.15), transparent 60%) no-repeat 1080px 180px / 90px 220px,
+
+    /* PC case body */
+    linear-gradient(to right, #1a1a22, #222230 20%, #1e1e28 80%, #161620) no-repeat 1080px 180px / 90px 220px,
+    /* Case top */
+    linear-gradient(#28282e, #222228) no-repeat 1080px 176px / 90px 6px,
+    /* Front I/O - power button */
+    radial-gradient(circle 4px at 1125px 186px, rgba(255,255,255,0.15), transparent 4px),
+    /* Power LED */
+    radial-gradient(circle 2px at 1125px 196px, rgba(0,200,255,0.8), transparent 3px),
+    /* Front USB ports */
+    linear-gradient(#0e0e14, #0e0e14) no-repeat 1110px 200px / 16px 4px,
+    linear-gradient(#0e0e14, #0e0e14) no-repeat 1110px 208px / 16px 4px,
+    /* Front mesh ventilation */
+    repeating-linear-gradient(to bottom,
+      #1a1a22 0px, #1a1a22 2px, #101018 2px, #101018 4px
+    ) no-repeat 1086px 320px / 78px 60px,
+    /* RGB strip on case bottom */
+    linear-gradient(to right, rgba(120,0,255,0.3), rgba(0,180,255,0.3)) no-repeat 1082px 398px / 86px 2px,
+    /* Case feet */
+    linear-gradient(#101018, #101018) no-repeat 1086px 400px / 14px 4px,
+    linear-gradient(#101018, #101018) no-repeat 1150px 400px / 14px 4px,
+
+    /* === SLEEK MONITOR === */
+
+    /* Thin bezels - dark black frame */
+    linear-gradient(#0a0a10, #0a0a10) no-repeat 340px 8px / 560px 394px,
+    /* Screen area (slightly lighter to show bezel edge) */
+    linear-gradient(#101018, #101018) no-repeat 346px 14px / 548px 376px,
+
+    /* Monitor stand neck */
+    linear-gradient(to right, #141420, #1a1a28 30%, #18182a 70%, #121220) no-repeat 590px 402px / 40px 24px,
+    /* Monitor base */
+    linear-gradient(#18182a, #121220) no-repeat 550px 424px / 120px 6px,
+    linear-gradient(rgba(120,80,220,0.15), transparent) no-repeat 555px 428px / 110px 4px,
+
+    /* === DESK === */
+    linear-gradient(#1e1e28, #181822) no-repeat 0 430px / 100% 8px,
+    /* Desk edge highlight */
+    linear-gradient(rgba(120,80,220,0.08), transparent) no-repeat 0 430px / 100% 2px,
+    linear-gradient(#141420, #101018) no-repeat 0 438px / 100% 102px,
+
+    /* Mousepad glow */
+    radial-gradient(ellipse 60px 20px at 280px 440px, rgba(0,200,255,0.06), transparent),
+
+    /* === PURPLE WALLS === */
+    /* LED strip along wall bottom */
+    linear-gradient(to right,
+      rgba(120,0,255,0.15), rgba(80,0,200,0.2) 50%, rgba(120,0,255,0.15)
+    ) no-repeat 0 426px / 100% 4px,
+
+    /* Wall panels - subtle vertical lines */
+    linear-gradient(rgba(100,60,160,0.06), rgba(100,60,160,0.06)) no-repeat 320px 0 / 2px 430px,
+    linear-gradient(rgba(100,60,160,0.06), rgba(100,60,160,0.06)) no-repeat 640px 0 / 2px 430px,
+    linear-gradient(rgba(100,60,160,0.06), rgba(100,60,160,0.06)) no-repeat 960px 0 / 2px 430px,
+
+    /* Purple wall + dark floor */
+    linear-gradient(to bottom,
+      #2a1840 0%, #261638 30%, #221434 55%,
+      #1a1028 62%, #1a1028 63%,
+      #101018 64%, #0c0c14 100%);
+}
+
+/* Sleek black monitor bezel for arcade images */
+#room.room-arcade ~ #objects .obj-monitor-screen,
+#room.room-arcade ~ #objects .obj-wall-poster {
+  border: 6px solid #0a0a10;
   border-radius: 2px;
+  box-shadow:
+    inset 0 0 15px rgba(120,80,220,0.1),
+    0 2px 8px rgba(0,0,0,0.5);
+  background: #08080e;
+  padding: 2px;
+  overflow: visible;
+}
+
+/* No monitor stand on arcade (it's in the background) */
+#room.room-arcade ~ #objects .obj-monitor-screen::after,
+#room.room-arcade ~ #objects .obj-wall-poster::after {
+  display: none;
+}
+
+/* Label on screen */
+#room.room-arcade ~ #objects .obj-monitor-screen .object-label,
+#room.room-arcade ~ #objects .obj-wall-poster .object-label {
+  bottom: auto;
+  top: 8px;
 }
 
 /* ================================================
@@ -859,17 +1119,17 @@
     /* Yellow work light */
     radial-gradient(ellipse 300px 280px at 50% 20%, rgba(255,230,120,0.15), transparent),
 
-    /* Pegboard (back wall) */
+    /* Pegboard (back wall - tall enough for scene images) */
     repeating-linear-gradient(to right,
       transparent 0px, transparent 24px,
       rgba(100,90,60,0.2) 24px, rgba(100,90,60,0.2) 28px
-    ) no-repeat 280px 20px / 720px 280px,
+    ) no-repeat 270px 8px / 740px 416px,
     repeating-linear-gradient(to bottom,
       transparent 0px, transparent 24px,
       rgba(100,90,60,0.2) 24px, rgba(100,90,60,0.2) 28px
-    ) no-repeat 280px 20px / 720px 280px,
+    ) no-repeat 270px 8px / 740px 416px,
     /* Pegboard base color */
-    linear-gradient(#6a5a40, #5e5035) no-repeat 280px 20px / 720px 280px,
+    linear-gradient(#6a5a40, #5e5035) no-repeat 270px 8px / 740px 416px,
 
     /* Hanging tools silhouettes */
     linear-gradient(#4a4030, #4a4030) no-repeat 300px 60px / 6px 40px,
@@ -880,14 +1140,14 @@
     linear-gradient(#4a4030, #4a4030) no-repeat 910px 50px / 26px 6px,
 
     /* Workbench surface */
-    linear-gradient(to bottom, #9a8a60, #8a7a50) no-repeat 0 310px / 100% 16px,
-    linear-gradient(#8a7a50, #7a6a40) no-repeat 0 326px / 100% 50px,
+    linear-gradient(to bottom, #9a8a60, #8a7a50) no-repeat 0 424px / 100% 12px,
+    linear-gradient(#8a7a50, #7a6a40) no-repeat 0 436px / 100% 34px,
     /* Bench front */
-    linear-gradient(#6a5a38, #5a4a28) no-repeat 0 376px / 100% 20px,
+    linear-gradient(#6a5a38, #5a4a28) no-repeat 0 470px / 100% 16px,
     /* Bench legs */
-    linear-gradient(#6a5a38, #6a5a38) no-repeat 40px 396px / 10px 60px,
-    linear-gradient(#6a5a38, #6a5a38) no-repeat 1230px 396px / 10px 60px,
-    linear-gradient(#6a5a38, #6a5a38) no-repeat 640px 396px / 10px 60px,
+    linear-gradient(#6a5a38, #6a5a38) no-repeat 40px 486px / 10px 50px,
+    linear-gradient(#6a5a38, #6a5a38) no-repeat 1230px 486px / 10px 50px,
+    linear-gradient(#6a5a38, #6a5a38) no-repeat 640px 486px / 10px 50px,
 
     /* Shelf with supplies (left) */
     linear-gradient(#7a6a48, #7a6a48) no-repeat 20px 140px / 180px 8px,
@@ -981,27 +1241,119 @@
       #5a5548 63%, #4a4438);
 }
 
-/* Gallery underground variant */
+/* Gallery underground variant - Undertale cave aesthetic */
 .gallery-underground {
-  filter: brightness(0.5) saturate(0.7);
+  filter: none;
 }
 
 .gallery-underground .room-bg {
   background:
-    /* Dim spotlights */
-    radial-gradient(ellipse 120px 300px at 50% 0%, rgba(255,210,120,0.08), transparent),
+    /* Ceiling crystal stars - scattered glowing blue dots */
+    radial-gradient(circle 2px at 80px 18px, rgba(100,180,255,0.7), transparent 3px),
+    radial-gradient(circle 1px at 180px 8px, rgba(120,200,255,0.5), transparent 2px),
+    radial-gradient(circle 3px at 310px 24px, rgba(80,160,255,0.8), transparent 4px),
+    radial-gradient(circle 1px at 420px 12px, rgba(140,210,255,0.5), transparent 2px),
+    radial-gradient(circle 2px at 530px 6px, rgba(100,180,255,0.6), transparent 3px),
+    radial-gradient(circle 2px at 650px 20px, rgba(120,200,255,0.7), transparent 3px),
+    radial-gradient(circle 1px at 750px 10px, rgba(80,160,255,0.5), transparent 2px),
+    radial-gradient(circle 3px at 870px 16px, rgba(100,180,255,0.8), transparent 4px),
+    radial-gradient(circle 1px at 960px 28px, rgba(140,210,255,0.4), transparent 2px),
+    radial-gradient(circle 2px at 1050px 8px, rgba(100,180,255,0.6), transparent 3px),
+    radial-gradient(circle 2px at 1150px 22px, rgba(120,200,255,0.7), transparent 3px),
+    radial-gradient(circle 1px at 1220px 14px, rgba(80,160,255,0.5), transparent 2px),
 
-    /* Rough walls */
-    linear-gradient(#9a9488, #9a9488) no-repeat 0 60% / 100% 3px,
+    /* Soft blue glow from crystals */
+    radial-gradient(ellipse 200px 60px at 310px 20px, rgba(60,120,200,0.12), transparent),
+    radial-gradient(ellipse 160px 50px at 870px 16px, rgba(60,120,200,0.10), transparent),
 
-    /* Pipes on ceiling */
-    linear-gradient(#6a6a6a, #6a6a6a) no-repeat 0 18px / 100% 4px,
-    linear-gradient(#606060, #606060) no-repeat 0 26px / 100% 3px,
+    /* Cave ceiling - jagged rock edge */
+    linear-gradient(#1a1028, #1a1028) no-repeat 0 0 / 100% 34px,
+    linear-gradient(#1a1028, transparent) no-repeat 0 34px / 100% 12px,
 
-    /* Floor */
+    /* Stalactites */
+    linear-gradient(#201430, #201430) no-repeat 140px 34px / 8px 18px,
+    linear-gradient(#201430, #201430) no-repeat 390px 34px / 6px 14px,
+    linear-gradient(#201430, #201430) no-repeat 680px 34px / 10px 22px,
+    linear-gradient(#201430, #201430) no-repeat 950px 34px / 7px 16px,
+    linear-gradient(#201430, #201430) no-repeat 1180px 34px / 8px 20px,
+
+    /* Echo flower glow - small blue light patches on ground */
+    radial-gradient(circle 12px at 120px 465px, rgba(50,140,220,0.2), transparent),
+    radial-gradient(circle 8px at 1100px 470px, rgba(60,150,230,0.15), transparent),
+    radial-gradient(circle 10px at 640px 468px, rgba(50,130,210,0.12), transparent),
+
+    /* Purple stone wall texture - column-like segments */
+    linear-gradient(#28183a, #28183a) no-repeat 0 44px / 3px 420px,
+    linear-gradient(#2a1a3c, #2a1a3c) no-repeat 320px 50px / 3px 414px,
+    linear-gradient(#28183a, #28183a) no-repeat 640px 46px / 3px 418px,
+    linear-gradient(#2a1a3c, #2a1a3c) no-repeat 960px 48px / 3px 416px,
+    linear-gradient(#28183a, #28183a) no-repeat 1277px 44px / 3px 420px,
+
+    /* Waterfall shimmer - vertical blue streak */
+    linear-gradient(rgba(40,100,180,0.08), rgba(60,140,220,0.12), rgba(40,100,180,0.06)) no-repeat 1240px 40px / 20px 424px,
+
+    /* Ground path - darker purple rock */
+    linear-gradient(#18102a, #18102a) no-repeat 0 464px / 100% 4px,
+
+    /* Purple cave walls + dark floor */
     linear-gradient(to bottom,
-      #8a8478, #7a7468 62%,
-      #4a4540 63%, #3a3530);
+      #1e1430 0%, #221838 30%, #261a3c 55%,
+      #18102a 62%, #18102a 63%,
+      #100c1e 64%, #0c0816 100%);
+}
+
+/* Gallery KRZ variant - Kentucky Route Zero aesthetic */
+/* Dark theatrical silhouettes, amber lamplight, deep navy void */
+.gallery-zero {
+  filter: none;
+}
+
+.gallery-zero .room-bg {
+  background:
+    /* Single amber lamp glow - stark dramatic cone */
+    radial-gradient(ellipse 120px 400px at 180px 0%, rgba(210,160,60,0.18), transparent),
+    /* Distant amber glow far right */
+    radial-gradient(ellipse 80px 300px at 1100px 0%, rgba(200,150,50,0.10), transparent),
+
+    /* Telephone pole silhouette - stark black geometric */
+    linear-gradient(#080810, #080810) no-repeat 160px 0 / 6px 320px,
+    /* Cross beam */
+    linear-gradient(#080810, #080810) no-repeat 130px 60px / 66px 4px,
+    /* Wires drooping from pole */
+    linear-gradient(#0a0a14, #0a0a14) no-repeat 196px 64px / 200px 1px,
+    linear-gradient(#0a0a14, #0a0a14) no-repeat 196px 60px / 300px 1px,
+    /* Wire sag hint */
+    linear-gradient(#0a0a14, #0a0a14) no-repeat 340px 68px / 60px 1px,
+    linear-gradient(#0a0a14, #0a0a14) no-repeat 420px 64px / 80px 1px,
+
+    /* Amber lamp fixture on pole */
+    radial-gradient(circle 6px at 163px 48px, rgba(220,170,60,0.6), rgba(200,150,40,0.2) 4px, transparent 6px),
+
+    /* Distant telephone poles (silhouettes) */
+    linear-gradient(#060610, #060610) no-repeat 900px 20px / 4px 200px,
+    linear-gradient(#060610, #060610) no-repeat 878px 50px / 48px 3px,
+    linear-gradient(#060610, #060610) no-repeat 1200px 30px / 3px 160px,
+    linear-gradient(#060610, #060610) no-repeat 1184px 56px / 36px 2px,
+
+    /* Ground-level amber reflection */
+    radial-gradient(ellipse 100px 20px at 170px 462px, rgba(200,150,50,0.08), transparent),
+
+    /* Road / ground line */
+    linear-gradient(#0c0c18, #0c0c18) no-repeat 0 460px / 100% 3px,
+
+    /* Roadside gravel texture */
+    radial-gradient(circle 1px at 80px 468px, rgba(40,40,50,0.6), transparent 1px),
+    radial-gradient(circle 1px at 200px 472px, rgba(40,40,50,0.5), transparent 1px),
+    radial-gradient(circle 1px at 500px 470px, rgba(35,35,48,0.5), transparent 1px),
+    radial-gradient(circle 1px at 800px 466px, rgba(40,40,55,0.5), transparent 1px),
+    radial-gradient(circle 1px at 1050px 474px, rgba(35,35,48,0.4), transparent 1px),
+
+    /* Deep navy-black sky with subtle blue horizon */
+    linear-gradient(to bottom,
+      #04040c 0%, #06060e 20%, #080812 40%,
+      #0a0a18 55%, #0c0c1e 60%,
+      #08081a 62%, #08081a 63%,
+      #060610 64%, #040408 100%);
 }
 
 /* ================================================

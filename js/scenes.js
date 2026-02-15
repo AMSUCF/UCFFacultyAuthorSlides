@@ -113,7 +113,7 @@ const SCENES = [
 
   { // 7 - The Corridor
     id: 7,
-    room: 'The Corridor',
+    room: 'The Portrait Hall',
     template: 'hallway',
     transition: 'walk-right',
     spriteX: 580,
@@ -125,7 +125,7 @@ const SCENES = [
 
   { // 8 - Quest
     id: 8,
-    room: "The Professor's Study",
+    room: "The Professor's Office",
     template: 'study',
     transition: 'wipe-right',
     spriteX: 120,
@@ -140,7 +140,7 @@ const SCENES = [
 
   { // 9 - Python
     id: 9,
-    room: "The Professor's Study",
+    room: "The Professor's Office",
     template: 'study',
     transition: 'diamond',
     spriteX: 120,
@@ -155,14 +155,14 @@ const SCENES = [
 
   { // 10 - Alice
     id: 10,
-    room: 'The Reading Nook',
+    room: "The Professor's Office",
     template: 'study',
     transition: 'walk-right',
     spriteX: 100,
     objects: [{
       img: 'alice.webp',
       type: 'ipad-screen',
-      x: 460, y: 20, w: 360, h: 390,
+      x: 400, y: 80, w: 480, h: 320,
       label: 'Alice for the iPad (2010)'
     }],
     dialogue: "The Alice iPad app was a hit in 2010. This is perhaps hard to imagine now. But I saw this as an extension of the adventure games I grew up on, a new platform for old dreams of interactive storytelling."
@@ -204,7 +204,7 @@ const SCENES = [
     id: 13,
     room: 'The Game Room',
     template: 'game-room',
-    transition: 'iris',
+    transition: 'wipe-right',
     spriteX: 140,
     objects: [{
       img: 'knight.webp',
@@ -383,6 +383,7 @@ const SCENES = [
     id: 24,
     room: 'The Zero Gallery',
     template: 'gallery',
+    palette: 'gallery-zero',
     transition: 'walk-right',
     spriteX: 160,
     objects: [{
@@ -398,6 +399,7 @@ const SCENES = [
     id: 25,
     room: 'The Zero Gallery',
     template: 'gallery',
+    palette: 'gallery-zero',
     transition: 'diamond',
     spriteX: 160,
     objects: [{
@@ -414,7 +416,7 @@ const SCENES = [
   { // 26 - Undertale
     id: 26,
     room: 'The Arcade',
-    template: 'game-room',
+    template: 'arcade',
     transition: 'walk-right',
     spriteX: 140,
     objects: [{
@@ -429,7 +431,7 @@ const SCENES = [
   { // 27 - Bad Time
     id: 27,
     room: 'The Arcade',
-    template: 'game-room',
+    template: 'arcade',
     transition: 'wipe-right',
     spriteX: 140,
     objects: [{
@@ -444,7 +446,7 @@ const SCENES = [
   { // 28 - Undertale Humanity
     id: 28,
     room: 'The Arcade',
-    template: 'game-room',
+    template: 'arcade',
     transition: 'iris',
     spriteX: 140,
     objects: [{
