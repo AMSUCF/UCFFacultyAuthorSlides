@@ -61,22 +61,10 @@ const Engine = (() => {
       _elements.progressBar.style.width = pct + '%';
       _elements.preloaderStatus.textContent = `Loading assets... ${loaded}/${total}`;
     }).then(() => {
-      _elements.preloaderStatus.textContent = 'Press any key or tap to begin';
-      waitForFirstKey();
-    });
-  }
-
-  function waitForFirstKey() {
-    function start() {
-      document.removeEventListener('keydown', start);
-      document.removeEventListener('click', start);
       _elements.preloader.classList.add('hidden');
       goToScene(0);
-      // Bind navigation after first scene
       setTimeout(() => bindInput(), 100);
-    }
-    document.addEventListener('keydown', start);
-    document.addEventListener('click', start);
+    });
   }
 
   // --- Keyboard + Tap Navigation ---
@@ -190,8 +178,8 @@ const Engine = (() => {
       direction: direction,
     });
 
-    // Flash "Look at" verb
-    flashVerb();
+    // Flash active verb
+    flashVerb(scene.verb);
 
     // Animate objects appearing
     staggerObjects();
@@ -342,15 +330,14 @@ const Engine = (() => {
   }
 
   // --- Verb bar flash ---
-  function flashVerb() {
+  function flashVerb(verbKey) {
     const verbs = _elements.verbBar.querySelectorAll('.verb');
     verbs.forEach(v => v.classList.remove('active'));
 
-    // Flash "Look at"
-    const lookAt = _elements.verbBar.querySelector('[data-verb="look"]');
-    if (lookAt) {
-      lookAt.classList.add('active');
-      setTimeout(() => lookAt.classList.remove('active'), 1500);
+    const target = _elements.verbBar.querySelector(`[data-verb="${verbKey || 'look'}"]`);
+    if (target) {
+      target.classList.add('active');
+      setTimeout(() => target.classList.remove('active'), 1500);
     }
   }
 

@@ -292,10 +292,10 @@
     linear-gradient(175deg, rgba(220,220,240,0.08) 0%, transparent 60%) no-repeat 500px 0 / 300px 200px,
 
     /* Projection screen */
-    linear-gradient(#d8d4cc, #ccc8c0) no-repeat 340px 30px / 560px 8px,
-    linear-gradient(#f0ece4, #e8e4dc) no-repeat 350px 38px / 540px 300px,
+    linear-gradient(#d8d4cc, #ccc8c0) no-repeat 290px 20px / 660px 8px,
+    linear-gradient(#f0ece4, #e8e4dc) no-repeat 300px 28px / 640px 350px,
     /* Screen shadow */
-    linear-gradient(rgba(0,0,0,0.2), transparent) no-repeat 350px 338px / 540px 20px,
+    linear-gradient(rgba(0,0,0,0.2), transparent) no-repeat 300px 378px / 640px 20px,
 
     /* Podium */
     linear-gradient(to right, #7a6a5a, #8a7a6a 50%, #7a6a5a) no-repeat 570px 380px / 100px 60px,

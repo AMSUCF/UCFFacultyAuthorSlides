@@ -41,7 +41,7 @@ const SCENES = [
     objects: [{
       img: 'readingstatsone.png',
       type: 'monitor-screen',
-      x: 370, y: 44, w: 510, h: 286,
+      x: 320, y: 34, w: 600, h: 336,
       label: 'Reading statistics (YouGov 2025)'
     }],
     dialogue: "The implied follow-up -- does anyone read academic monographs? -- points to a broader cultural anxiety. The forms of writing we celebrate tonight are all, we are told, suffering from a decline in audience."
@@ -56,7 +56,7 @@ const SCENES = [
     objects: [{
       img: 'readingstatstwo.png',
       type: 'monitor-screen',
-      x: 370, y: 44, w: 510, h: 286,
+      x: 320, y: 34, w: 600, h: 336,
       label: 'More reading statistics'
     }],
     dialogue: "Headlines proclaim the death of literacy and the steady erosion of reading for pleasure. This alleged death of reading, exaggerated though it may be, arrives at a moment when computational tools are expanding rapidly."
@@ -116,6 +116,7 @@ const SCENES = [
     room: 'The Archive',
     template: 'archive',
     transition: 'wipe-right',
+    verb: 'pickup',
     spriteX: 140,
     objects: [{
       img: 'trackchanges.jpg',
@@ -143,6 +144,7 @@ const SCENES = [
     room: "The Professor's Office",
     template: 'study',
     transition: 'wipe-right',
+    verb: 'pickup',
     spriteX: 120,
     objects: [{
       img: 'quest.jpg',
@@ -301,6 +303,7 @@ const SCENES = [
     room: 'A Voice in the Dark',
     template: 'dark-room',
     transition: 'fade',
+    verb: 'talk',
     spriteX: 180,
     objects: [{
       type: 'wall-text',
@@ -333,6 +336,7 @@ const SCENES = [
     room: 'The Twine Workshop',
     template: 'workshop',
     transition: 'walk-right',
+    verb: 'pickup',
     spriteX: 120,
     objects: [{
       img: 'twining.png',
@@ -498,6 +502,7 @@ const SCENES = [
     room: 'The Ruins',
     template: 'ruins',
     transition: 'fade',
+    verb: 'pickup',
     spriteX: 140,
     objects: [{
       img: 'geek.jpg',
@@ -530,6 +535,7 @@ const SCENES = [
     room: "The Author's Shelf",
     template: 'study',
     transition: 'walk-right',
+    verb: 'pickup',
     spriteX: 120,
     objects: [{
       img: 'fanboy.jpg',
@@ -548,6 +554,7 @@ const SCENES = [
     template: 'study',
     palette: 'study-crisis',
     transition: 'fade',
+    verb: 'pickup',
     spriteX: 120,
     objects: [{
       img: 'pivoting.jpg',
@@ -564,6 +571,7 @@ const SCENES = [
     template: 'study',
     palette: 'study-crisis',
     transition: 'iris',
+    verb: 'pickup',
     spriteX: 120,
     objects: [{
       img: 'making.jpg',
@@ -581,6 +589,7 @@ const SCENES = [
     room: 'The Connection',
     template: 'dark-room',
     transition: 'fade',
+    verb: 'talk',
     spriteX: 200,
     objects: [{
       type: 'wall-text',
@@ -598,6 +607,7 @@ const SCENES = [
     room: 'The Inspiration Gallery',
     template: 'gallery',
     transition: 'walk-right',
+    verb: 'pickup',
     spriteX: 160,
     objects: [{
       img: 'loveless.jpg',
