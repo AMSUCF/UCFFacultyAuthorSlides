@@ -14,8 +14,12 @@ const Autoplay = (() => {
   let _button = null;
   let _autoAdvancing = false;
 
+  let _badge = null;
+  let _badgeTimer = null;
+
   function init() {
     _button = document.getElementById('autoplay-btn');
+    _badge = document.getElementById('speedrun-badge');
     if (_button) {
       _button.addEventListener('click', (e) => {
         e.preventDefault();
@@ -27,6 +31,19 @@ const Autoplay = (() => {
   function toggle() {
     if (_playing) pause();
     else play();
+  }
+
+  function showBadge() {
+    if (!_badge) return;
+    if (_badgeTimer) clearTimeout(_badgeTimer);
+    _badge.classList.remove('hidden', 'show');
+    // Force reflow so animation restarts
+    void _badge.offsetWidth;
+    _badge.classList.add('show');
+    _badgeTimer = setTimeout(() => {
+      _badge.classList.add('hidden');
+      _badge.classList.remove('show');
+    }, 3200);
   }
 
   function play() {
@@ -50,11 +67,16 @@ const Autoplay = (() => {
       _startTime = null;
       updateButton();
       Engine.goToScene(1);
+      // Show speed run badge over the UCF exterior
+      setTimeout(() => showBadge(), 800);
       return;
     }
 
     _playing = true;
     updateButton();
+
+    // Show badge on fresh play (not resume)
+    if (_elapsed === 0) showBadge();
 
     const perScene = TOTAL_MS / totalScenes;
 
@@ -75,6 +97,7 @@ const Autoplay = (() => {
       _elapsed = Date.now() - _startTime;
     }
     clearTimers();
+    hideBadge();
     updateButton();
   }
 
@@ -83,12 +106,21 @@ const Autoplay = (() => {
     _startTime = null;
     _elapsed = 0;
     clearTimers();
+    hideBadge();
     updateButton();
   }
 
   function clearTimers() {
     if (_timer) { clearTimeout(_timer); _timer = null; }
     if (_retryTimer) { clearTimeout(_retryTimer); _retryTimer = null; }
+    if (_badgeTimer) { clearTimeout(_badgeTimer); _badgeTimer = null; }
+  }
+
+  function hideBadge() {
+    if (_badge) {
+      _badge.classList.add('hidden');
+      _badge.classList.remove('show');
+    }
   }
 
   function scheduleNext() {

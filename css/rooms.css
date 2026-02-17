@@ -960,99 +960,104 @@
 }
 
 /* ================================================
-   8b. ARCADE - Modern gaming setup
-   Purple walls, RGB lighting, sleek black monitor + small PC
+   8b. THE UNDERGROUND - Neon pink arcade
+   Hot pink walls, RGB lighting, sleek black monitor + small PC
    ================================================ */
 .room-arcade .room-bg {
   background:
-    /* RGB strip glow on ceiling */
+    /* RGB strip glow on ceiling - pink-heavy */
     linear-gradient(to right,
-      rgba(255,0,80,0.12), rgba(120,0,255,0.12) 25%,
-      rgba(0,120,255,0.12) 50%, rgba(0,255,180,0.10) 75%,
-      rgba(255,0,120,0.10)
+      rgba(255,0,100,0.18), rgba(255,20,120,0.15) 25%,
+      rgba(200,0,255,0.12) 50%, rgba(255,0,160,0.14) 75%,
+      rgba(255,0,80,0.16)
     ) no-repeat 0 0 / 100% 8px,
 
-    /* Monitor glow on wall */
-    radial-gradient(ellipse 350px 200px at 540px 180px, rgba(120,80,220,0.12), transparent),
+    /* Monitor glow on wall - hot pink */
+    radial-gradient(ellipse 350px 200px at 540px 180px, rgba(255,40,120,0.14), transparent),
 
     /* === SMALL MODERN PC (right side) === */
 
-    /* RGB fan glow through tempered glass */
-    radial-gradient(circle 18px at 1120px 280px, rgba(120,0,255,0.25), transparent),
-    radial-gradient(circle 14px at 1120px 340px, rgba(0,200,255,0.20), transparent),
-    /* Tempered glass panel - dark with subtle reflection */
-    linear-gradient(160deg, rgba(60,40,80,0.15), transparent 60%) no-repeat 1080px 180px / 90px 220px,
+    /* RGB fan glow through tempered glass - pink */
+    radial-gradient(circle 18px at 1120px 280px, rgba(255,0,120,0.3), transparent),
+    radial-gradient(circle 14px at 1120px 340px, rgba(255,40,180,0.22), transparent),
+    /* Tempered glass panel - dark with pink reflection */
+    linear-gradient(160deg, rgba(80,20,50,0.2), transparent 60%) no-repeat 1080px 180px / 90px 220px,
 
     /* PC case body */
-    linear-gradient(to right, #1a1a22, #222230 20%, #1e1e28 80%, #161620) no-repeat 1080px 180px / 90px 220px,
+    linear-gradient(to right, #1a1018, #22182a 20%, #1e1628 80%, #16101e) no-repeat 1080px 180px / 90px 220px,
     /* Case top */
-    linear-gradient(#28282e, #222228) no-repeat 1080px 176px / 90px 6px,
+    linear-gradient(#2a2030, #24182a) no-repeat 1080px 176px / 90px 6px,
     /* Front I/O - power button */
     radial-gradient(circle 4px at 1125px 186px, rgba(255,255,255,0.15), transparent 4px),
     /* Power LED */
-    radial-gradient(circle 2px at 1125px 196px, rgba(0,200,255,0.8), transparent 3px),
+    radial-gradient(circle 2px at 1125px 196px, rgba(255,40,120,0.9), transparent 3px),
     /* Front USB ports */
-    linear-gradient(#0e0e14, #0e0e14) no-repeat 1110px 200px / 16px 4px,
-    linear-gradient(#0e0e14, #0e0e14) no-repeat 1110px 208px / 16px 4px,
+    linear-gradient(#0e0a12, #0e0a12) no-repeat 1110px 200px / 16px 4px,
+    linear-gradient(#0e0a12, #0e0a12) no-repeat 1110px 208px / 16px 4px,
     /* Front mesh ventilation */
     repeating-linear-gradient(to bottom,
-      #1a1a22 0px, #1a1a22 2px, #101018 2px, #101018 4px
+      #1a1420 0px, #1a1420 2px, #100c16 2px, #100c16 4px
     ) no-repeat 1086px 320px / 78px 60px,
-    /* RGB strip on case bottom */
-    linear-gradient(to right, rgba(120,0,255,0.3), rgba(0,180,255,0.3)) no-repeat 1082px 398px / 86px 2px,
+    /* RGB strip on case bottom - hot pink */
+    linear-gradient(to right, rgba(255,0,120,0.4), rgba(255,40,180,0.35)) no-repeat 1082px 398px / 86px 2px,
     /* Case feet */
-    linear-gradient(#101018, #101018) no-repeat 1086px 400px / 14px 4px,
-    linear-gradient(#101018, #101018) no-repeat 1150px 400px / 14px 4px,
+    linear-gradient(#100c16, #100c16) no-repeat 1086px 400px / 14px 4px,
+    linear-gradient(#100c16, #100c16) no-repeat 1150px 400px / 14px 4px,
 
     /* === SLEEK MONITOR === */
 
     /* Thin bezels - dark black frame */
-    linear-gradient(#0a0a10, #0a0a10) no-repeat 340px 8px / 560px 394px,
+    linear-gradient(#0a080e, #0a080e) no-repeat 340px 8px / 560px 394px,
     /* Screen area (slightly lighter to show bezel edge) */
     linear-gradient(#101018, #101018) no-repeat 346px 14px / 548px 376px,
 
     /* Monitor stand neck */
-    linear-gradient(to right, #141420, #1a1a28 30%, #18182a 70%, #121220) no-repeat 590px 402px / 40px 24px,
+    linear-gradient(to right, #14101e, #1a1428 30%, #18142a 70%, #12101e) no-repeat 590px 402px / 40px 24px,
     /* Monitor base */
-    linear-gradient(#18182a, #121220) no-repeat 550px 424px / 120px 6px,
-    linear-gradient(rgba(120,80,220,0.15), transparent) no-repeat 555px 428px / 110px 4px,
+    linear-gradient(#18142a, #12101e) no-repeat 550px 424px / 120px 6px,
+    linear-gradient(rgba(255,40,120,0.15), transparent) no-repeat 555px 428px / 110px 4px,
 
     /* === DESK === */
-    linear-gradient(#1e1e28, #181822) no-repeat 0 430px / 100% 8px,
-    /* Desk edge highlight */
-    linear-gradient(rgba(120,80,220,0.08), transparent) no-repeat 0 430px / 100% 2px,
-    linear-gradient(#141420, #101018) no-repeat 0 438px / 100% 102px,
+    linear-gradient(#1e1828, #181222) no-repeat 0 430px / 100% 8px,
+    /* Desk edge highlight - pink */
+    linear-gradient(rgba(255,40,120,0.1), transparent) no-repeat 0 430px / 100% 2px,
+    linear-gradient(#141020, #100c18) no-repeat 0 438px / 100% 102px,
 
-    /* Mousepad glow */
-    radial-gradient(ellipse 60px 20px at 280px 440px, rgba(0,200,255,0.06), transparent),
+    /* Mousepad glow - pink */
+    radial-gradient(ellipse 60px 20px at 280px 440px, rgba(255,40,120,0.06), transparent),
 
-    /* === PURPLE WALLS === */
-    /* LED strip along wall bottom */
+    /* === NEON PINK WALLS === */
+    /* LED strip along wall bottom - hot pink */
     linear-gradient(to right,
-      rgba(120,0,255,0.15), rgba(80,0,200,0.2) 50%, rgba(120,0,255,0.15)
+      rgba(255,0,100,0.2), rgba(255,20,120,0.25) 50%, rgba(255,0,100,0.2)
     ) no-repeat 0 426px / 100% 4px,
 
-    /* Wall panels - subtle vertical lines */
-    linear-gradient(rgba(100,60,160,0.06), rgba(100,60,160,0.06)) no-repeat 320px 0 / 2px 430px,
-    linear-gradient(rgba(100,60,160,0.06), rgba(100,60,160,0.06)) no-repeat 640px 0 / 2px 430px,
-    linear-gradient(rgba(100,60,160,0.06), rgba(100,60,160,0.06)) no-repeat 960px 0 / 2px 430px,
+    /* Wall panels - subtle vertical lines with pink tint */
+    linear-gradient(rgba(180,40,100,0.07), rgba(180,40,100,0.07)) no-repeat 320px 0 / 2px 430px,
+    linear-gradient(rgba(180,40,100,0.07), rgba(180,40,100,0.07)) no-repeat 640px 0 / 2px 430px,
+    linear-gradient(rgba(180,40,100,0.07), rgba(180,40,100,0.07)) no-repeat 960px 0 / 2px 430px,
 
-    /* Purple wall + dark floor */
+    /* Neon pink wall + dark floor */
     linear-gradient(to bottom,
-      #2a1840 0%, #261638 30%, #221434 55%,
-      #1a1028 62%, #1a1028 63%,
-      #101018 64%, #0c0c14 100%);
+      #3a1028 0%, #341026 30%, #2e0e22 55%,
+      #1e0a18 62%, #1e0a18 63%,
+      #100c16 64%, #0a0810 100%);
 }
 
-/* Sleek black monitor bezel for arcade images */
+/* Sleek black monitor bezel for arcade images - high contrast bevel */
 #room.room-arcade ~ #objects .obj-monitor-screen,
 #room.room-arcade ~ #objects .obj-wall-poster {
-  border: 6px solid #0a0a10;
+  border: 6px solid #0a080e;
+  border-top-color: #2a1828;
+  border-left-color: #221420;
   border-radius: 2px;
   box-shadow:
-    inset 0 0 15px rgba(120,80,220,0.1),
-    0 2px 8px rgba(0,0,0,0.5);
-  background: #08080e;
+    inset 0 0 18px rgba(255,40,120,0.12),
+    inset 1px 1px 0 rgba(255,180,220,0.08),
+    inset -1px -1px 0 rgba(0,0,0,0.4),
+    0 3px 12px rgba(0,0,0,0.6),
+    0 0 20px rgba(255,0,100,0.08);
+  background: #06040a;
   padding: 2px;
   overflow: visible;
 }
@@ -1071,43 +1076,53 @@
 }
 
 /* ================================================
-   9. COMPUTER LAB - Monitors, blue glow, tech
-   Blue-gray walls, clearly visible
+   9. THE FLASH LAB - Strong Bad Email Room
+   Flat sage green walls, brown desk, tan carpet
+   Homestar Runner / Flash animation aesthetic
    ================================================ */
 .room-computer-lab .room-bg {
   background:
-    /* Fluorescent light strip */
-    linear-gradient(to right, transparent 15%, rgba(200,220,255,0.12) 25%, rgba(200,220,255,0.15) 50%, rgba(200,220,255,0.12) 75%, transparent 85%) no-repeat 0 0 / 100% 6px,
+    /* Warm overhead glow */
+    radial-gradient(circle 60px at 640px 0px, rgba(255,255,210,0.12), transparent),
 
-    /* Monitor glow */
-    radial-gradient(ellipse 400px 200px at 50% 40%, rgba(80,180,255,0.1), transparent),
+    /* === WALL DECORATIONS === */
 
-    /* Left monitor stand */
-    linear-gradient(#5a5a6a, #4a4a5a) no-repeat 80px 180px / 60px 50px,
-    linear-gradient(#6a6a7a, #5a5a6a) no-repeat 70px 168px / 80px 14px,
-    linear-gradient(#3a3a4a, #2a2a3a) no-repeat 75px 140px / 70px 30px,
-    radial-gradient(ellipse 45px 25px at 110px 155px, rgba(50,220,60,0.15), transparent),
+    /* Red pennant / flag - left wall (SB style) */
+    linear-gradient(#5a4a30, #5a4a30) no-repeat 100px 55px / 3px 75px,
+    linear-gradient(to right, #cc3333 92%, transparent) no-repeat 103px 58px / 70px 13px,
+    linear-gradient(to right, #cc3333 80%, transparent) no-repeat 103px 71px / 58px 13px,
+    linear-gradient(to right, #cc3333 60%, transparent) no-repeat 103px 84px / 40px 13px,
+    linear-gradient(to right, #cc3333 35%, transparent) no-repeat 103px 97px / 22px 10px,
 
-    /* Right monitor stand */
-    linear-gradient(#5a5a6a, #4a4a5a) no-repeat 1060px 180px / 60px 50px,
-    linear-gradient(#6a6a7a, #5a5a6a) no-repeat 1050px 168px / 80px 14px,
-    linear-gradient(#3a3a4a, #2a2a3a) no-repeat 1055px 140px / 70px 30px,
-    radial-gradient(ellipse 45px 25px at 1090px 155px, rgba(50,150,255,0.15), transparent),
+    /* Framed poster - right wall (band poster vibe) */
+    linear-gradient(#7a6a40, #7a6a40) no-repeat 1038px 65px / 90px 74px,
+    linear-gradient(#e8d8b0, #dcc898) no-repeat 1042px 69px / 82px 66px,
+    linear-gradient(#3a5080, #2e4472) no-repeat 1046px 73px / 74px 46px,
+    linear-gradient(#c8b880, #c0b070) no-repeat 1046px 119px / 74px 12px,
 
-    /* Long desk surface */
-    linear-gradient(to bottom, #5a5a70 0px, #4a4a60 4px, #4a4a5e 4px) no-repeat 0 55% / 100% 60px,
-    /* Desk front edge */
-    linear-gradient(#3a3a50, #2e2e44) no-repeat 0 calc(55% + 60px) / 100% 8px,
+    /* === DESK - simple flat brown wood === */
 
-    /* Cable mess (under desk) */
-    linear-gradient(70deg, transparent 49%, #3a3a4a 49%, #3a3a4a 51%, transparent 51%) no-repeat 300px 380px / 100px 60px,
-    linear-gradient(110deg, transparent 49%, #333345 49%, #333345 51%, transparent 51%) no-repeat 600px 380px / 80px 60px,
+    /* Desk surface */
+    linear-gradient(#8B6B2A, #826020) no-repeat 250px 390px / 780px 10px,
+    /* Desk front panel */
+    linear-gradient(#7A5A1E, #6E4E16) no-repeat 250px 400px / 780px 80px,
+    /* Under-desk shadow */
+    linear-gradient(to bottom, rgba(0,0,0,0.12), transparent) no-repeat 250px 400px / 780px 6px,
+    /* Desk legs */
+    linear-gradient(#6E4E16, #6E4E16) no-repeat 268px 480px / 12px 60px,
+    linear-gradient(#6E4E16, #6E4E16) no-repeat 1000px 480px / 12px 60px,
 
-    /* Floor tiles */
-    repeating-linear-gradient(to right, #2a2e3a 0px, #2a2e3a 64px, #303448 64px, #303448 68px),
+    /* === FLOOR === */
 
-    /* Walls - blue-gray, CLEARLY visible */
-    linear-gradient(to bottom, #4a5070 0%, #3a4460 55%, #2a2e3a 62%);
+    /* Baseboard strip */
+    linear-gradient(#506840, #4a6238) no-repeat 0 432px / 100% 5px,
+    /* Flat tan carpet - Homestar Runner style */
+    linear-gradient(#C4A878, #BEA270) no-repeat 0 437px / 100% 103px,
+
+    /* === WALL === */
+
+    /* Flat sage green - THE Strong Bad email room green */
+    linear-gradient(#6E9462, #6A9060);
 }
 
 /* ================================================

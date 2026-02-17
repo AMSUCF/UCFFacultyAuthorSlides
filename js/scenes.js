@@ -111,8 +111,23 @@ const SCENES = [
     dialogue: "In electronic literature, we've been talking about the end of books for a long time. Robert Coover's 1992 New York Times essay declared the hypertext novel would overthrow print. That... didn't happen."
   },
 
-  { // 7 - The Corridor
+  { // 7 - Track Changes
     id: 7,
+    room: 'The Archive',
+    template: 'archive',
+    transition: 'wipe-right',
+    spriteX: 140,
+    objects: [{
+      img: 'trackchanges.jpg',
+      type: 'book-pedestal',
+      x: 500, y: 20, w: 300, h: 400,
+      label: 'Track Changes'
+    }],
+    dialogue: "Every tool changes our writing. Track Changes explored how word processors shaped literature itself -- from the way we draft to the way we think about revision. Now the tools are writing back."
+  },
+
+  { // 8 - The Corridor
+    id: 8,
     room: 'The Portrait Hall',
     template: 'hallway',
     transition: 'walk-right',
@@ -123,8 +138,8 @@ const SCENES = [
 
   // ===== ACT 5: THE FIRST BOOK =====
 
-  { // 8 - Quest
-    id: 8,
+  { // 9 - Quest
+    id: 9,
     room: "The Professor's Office",
     template: 'study',
     transition: 'wipe-right',
@@ -138,8 +153,8 @@ const SCENES = [
     dialogue: "This was my first book. The working title was 'Magical Books,' which was shot down by a table of scholars at the Electronic Literature Organization in favor of a Monty Python joke."
   },
 
-  { // 9 - Python
-    id: 9,
+  { // 10 - Python
+    id: 10,
     room: "The Professor's Office",
     template: 'study',
     transition: 'diamond',
@@ -153,8 +168,8 @@ const SCENES = [
     dialogue: "We went with a quest metaphor instead. I saw interactive fiction and adventure games as extensions of literary tradition -- the reader as hero, the author as architect of possibility."
   },
 
-  { // 10 - Alice
-    id: 10,
+  { // 11 - Alice
+    id: 11,
     room: "The Professor's Office",
     template: 'study',
     transition: 'walk-right',
@@ -170,8 +185,8 @@ const SCENES = [
 
   // ===== ACT 6: THE GAME ROOM =====
 
-  { // 11 - Tentacle
-    id: 11,
+  { // 12 - Tentacle
+    id: 12,
     room: 'The Game Room',
     template: 'game-room',
     transition: 'walk-right',
@@ -185,8 +200,8 @@ const SCENES = [
     dialogue: "I was interested in the tools that made these games and who they empowered. Adventure games were the subject of much of my graduate research -- LucasArts, Sierra, the golden age of point-and-click."
   },
 
-  { // 12 - Jensen
-    id: 12,
+  { // 13 - Jensen
+    id: 13,
     room: 'The Game Room',
     template: 'game-room',
     transition: 'wipe-right',
@@ -200,8 +215,8 @@ const SCENES = [
     dialogue: "One of the few women making games in that era was Jane Jensen. Her work demonstrated that adventure games could tell complex, literary stories -- gothic mysteries with real emotional depth."
   },
 
-  { // 13 - Knight
-    id: 13,
+  { // 14 - Knight
+    id: 14,
     room: 'The Game Room',
     template: 'game-room',
     transition: 'wipe-right',
@@ -217,8 +232,8 @@ const SCENES = [
 
   // ===== ACT 7: TOOLS OF CREATION =====
 
-  { // 14 - AGS
-    id: 14,
+  { // 15 - AGS
+    id: 15,
     room: 'The Workshop',
     template: 'workshop',
     transition: 'walk-right',
@@ -234,8 +249,8 @@ const SCENES = [
 
   // ===== ACT 8: THE FLASH ERA =====
 
-  { // 15 - Flash book
-    id: 15,
+  { // 16 - Flash book
+    id: 16,
     room: 'The Flash Lab',
     template: 'computer-lab',
     transition: 'walk-right',
@@ -249,8 +264,8 @@ const SCENES = [
     dialogue: "Similar tools -- and their fate -- was the subject of my next book. Flash empowered an entire generation of web creators, artists, and storytellers to build for the open web."
   },
 
-  { // 16 - Flash creativity
-    id: 16,
+  { // 17 - Flash creativity
+    id: 17,
     room: 'The Flash Lab',
     template: 'computer-lab',
     transition: 'wipe-right',
@@ -264,8 +279,8 @@ const SCENES = [
     dialogue: "Flash enabled anyone to build interactive experiences. It was messy and democratic and endlessly creative. Homestar Runner, Newgrounds, a million weird wonderful experiments in what the web could be."
   },
 
-  { // 17 - Flash web
-    id: 17,
+  { // 18 - Flash web
+    id: 18,
     room: 'The Flash Lab',
     template: 'computer-lab',
     transition: 'iris',
@@ -281,8 +296,8 @@ const SCENES = [
 
   // ===== ACT 9: A VOICE IN THE DARK =====
 
-  { // 18 - Natalie Lawhead quote
-    id: 18,
+  { // 19 - Natalie Lawhead quote
+    id: 19,
     room: 'A Voice in the Dark',
     template: 'dark-room',
     transition: 'fade',
@@ -296,8 +311,8 @@ const SCENES = [
     dialogue: "A voice echoes through the dark archive. It speaks of what was lost -- and how easily it was lost."
   },
 
-  { // 19 - Flash preservation
-    id: 19,
+  { // 20 - Flash preservation
+    id: 20,
     room: 'The Archive Terminal',
     template: 'data-center',
     transition: 'wipe-right',
@@ -313,8 +328,8 @@ const SCENES = [
 
   // ===== ACT 10: TWINE =====
 
-  { // 20 - Twining book
-    id: 20,
+  { // 21 - Twining book
+    id: 21,
     room: 'The Twine Workshop',
     template: 'workshop',
     transition: 'walk-right',
@@ -328,8 +343,8 @@ const SCENES = [
     dialogue: "I happened to be in grad school with the person who would make a tool incredibly important to a wide range of authors -- Chris Klimas's Twine, a tool for the very form Coover thought would overthrow the novel."
   },
 
-  { // 21 - Twine interface
-    id: 21,
+  { // 22 - Twine interface
+    id: 22,
     room: 'The Twine Workshop',
     template: 'workshop',
     transition: 'iris',
@@ -345,8 +360,8 @@ const SCENES = [
 
   // ===== ACT 11: OUTSIDER VOICES =====
 
-  { // 22 - Porpentine
-    id: 22,
+  { // 23 - Porpentine
+    id: 23,
     room: 'The Underground',
     template: 'gallery',
     palette: 'gallery-underground',
@@ -361,8 +376,8 @@ const SCENES = [
     dialogue: "Porpentine's Twine work opened doors for voices previously excluded from game creation. The personal became playable, the marginal became central. Twine gave outsiders a way in."
   },
 
-  { // 23 - Outsider
-    id: 23,
+  { // 24 - Outsider
+    id: 24,
     room: 'The Underground',
     template: 'gallery',
     palette: 'gallery-underground',
@@ -379,8 +394,8 @@ const SCENES = [
 
   // ===== ACT 12: INTERACTIVE NARRATIVE =====
 
-  { // 24 - KRZ Exchange
-    id: 24,
+  { // 25 - KRZ Exchange
+    id: 25,
     room: 'The Zero Gallery',
     template: 'gallery',
     palette: 'gallery-zero',
@@ -395,8 +410,8 @@ const SCENES = [
     dialogue: "This fascination with the type of stories that technology enables has continued to be at the heart of my work. Kentucky Route Zero is a story of workers displaced by machines -- a cycle that replays across every era of technological change. Magical realism made painfully relevant."
   },
 
-  { // 25 - KRZ Machine
-    id: 25,
+  { // 26 - KRZ Machine
+    id: 26,
     room: 'The Zero Gallery',
     template: 'gallery',
     palette: 'gallery-zero',
@@ -413,9 +428,9 @@ const SCENES = [
 
   // ===== ACT 13: DETERMINATION =====
 
-  { // 26 - Undertale
-    id: 26,
-    room: 'The Arcade',
+  { // 27 - Undertale
+    id: 27,
+    room: 'Indie Arcade',
     template: 'arcade',
     transition: 'walk-right',
     spriteX: 140,
@@ -428,9 +443,9 @@ const SCENES = [
     dialogue: "Undertale proved that deeply human stories could emerge from the simplest tools of play. A game about mercy in a medium built around conflict."
   },
 
-  { // 27 - Bad Time
-    id: 27,
-    room: 'The Arcade',
+  { // 28 - Bad Time
+    id: 28,
+    room: 'Indie Arcade',
     template: 'arcade',
     transition: 'wipe-right',
     spriteX: 140,
@@ -443,9 +458,9 @@ const SCENES = [
     dialogue: "It challenged players to reconsider their assumptions about what games ask of us. You could fight everything -- or you could choose not to. The game remembers your choices."
   },
 
-  { // 28 - Undertale Humanity
-    id: 28,
-    room: 'The Arcade',
+  { // 29 - Undertale Humanity
+    id: 29,
+    room: 'Indie Arcade',
     template: 'arcade',
     transition: 'iris',
     spriteX: 140,
@@ -460,8 +475,8 @@ const SCENES = [
 
   // ===== ACT 14: THE RUINS =====
 
-  { // 29 - The Ruins
-    id: 29,
+  { // 30 - The Ruins
+    id: 30,
     room: 'The Ruins',
     template: 'ruins',
     transition: 'fade-slow',
@@ -478,10 +493,10 @@ const SCENES = [
 
   // ===== ACT 15: TOXIC CULTURE =====
 
-  { // 30 - Geek
-    id: 30,
-    room: 'The Dark Archive',
-    template: 'dark-room',
+  { // 31 - Geek
+    id: 31,
+    room: 'The Ruins',
+    template: 'ruins',
     transition: 'fade',
     spriteX: 140,
     objects: [{
@@ -493,10 +508,10 @@ const SCENES = [
     dialogue: "There's also a part of my work that has always been informed by technology's amplification of misogyny and toxicity. The culture wars raging through gaming and tech are not new."
   },
 
-  { // 31 - Aftermath
-    id: 31,
-    room: 'The Dark Archive',
-    template: 'dark-room',
+  { // 32 - Aftermath
+    id: 32,
+    room: 'The Ruins',
+    template: 'ruins',
     transition: 'iris',
     spriteX: 140,
     objects: [{
@@ -510,8 +525,8 @@ const SCENES = [
 
   // ===== ACT 16: THE AUTHOR'S JOURNEY =====
 
-  { // 32 - Fanboy
-    id: 32,
+  { // 33 - Fanboy
+    id: 33,
     room: "The Author's Shelf",
     template: 'study',
     transition: 'walk-right',
@@ -523,21 +538,6 @@ const SCENES = [
       label: 'Fandom and the Fanboy Problem'
     }],
     dialogue: "I find myself trying to write in a landscape where the things that bring me joy -- the platforms and tools that historically enabled authorship and play -- are a source of perpetual despair and frustration."
-  },
-
-  { // 33 - Track Changes
-    id: 33,
-    room: 'The Writing Desk',
-    template: 'study',
-    transition: 'wipe-right',
-    spriteX: 120,
-    objects: [{
-      img: 'trackchanges.jpg',
-      type: 'book-pedestal',
-      x: 500, y: 20, w: 300, h: 400,
-      label: 'Track Changes'
-    }],
-    dialogue: "Every tool changes our writing. Track Changes explored how word processors shaped literature itself -- from the way we draft to the way we think about revision. Now the tools are writing back."
   },
 
   // ===== ACT 17: CRISIS =====
